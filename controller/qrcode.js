@@ -2,6 +2,8 @@ const express = require("express")
 const qrcode = require("../models/qrcode")
 const QRCode = require("qrcode")
 const multer = require("multer")
+const fs = require("fs")
+const path = require("path")
 const app = express()
 const localStorage = require("localStorage")
 
@@ -23,12 +25,13 @@ const qrcodegen = (req, res) => {
         
         if(err) return console.log("error occurred")
         console.log(QRcode)
-        try {
+        res.json({status: "ok"})
+
+        /* try {
             var obj = {
                 username: sess.user,
                 img: {
-                    data: fs.readFileSync(path.join(__dirname + '/uploads/' + url)),
-                    contentType: 'image/png'
+                    data: fs.readFileSync(path.join(__dirname + '/uploads/' + QRcode))
                 }
             }
             image.create(obj, (err, item) => {
@@ -36,19 +39,20 @@ const qrcodegen = (req, res) => {
                     console.log(err);
                 }
                 else {
-                    res.redirect('/User/Created');
+                   return res.json({status: 'OK'})
                 }
             });
         } catch (error) {
-            res.render('create', {message: "An error occurred"})
-        }
-    })
+            console.log(error)
+            return res.json({status: 'error'})
+        } */
 
-    QRCode.toDataURL(url, (err, src) => {
-        if (err) res.send("Error occured");
-        console.log(src)
-        res.json({status: "ok"})
-    });
+        /* QRCode.toDataURL(url, (err, src) => {
+            if (err) res.send("Error occured");
+            console.log(src)
+            res.json({status: "ok"})
+        }); */
+    })
 }
 
 const getAllqrCode = (req, res) => {
