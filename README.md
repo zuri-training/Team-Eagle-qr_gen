@@ -1,4 +1,7 @@
-these are the APIs you fetch from
+Create file named .env, it should contain PORT, MONGO_URL, JWT
+
+
+These are the APIs you fetch from
 
 Login API ("/api/qrcode/user/login")
 
