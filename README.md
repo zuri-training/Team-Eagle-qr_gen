@@ -1,5 +1,8 @@
 Create file named .env, it should contain PORT, MONGO_URL, JWT
 
+To run program, npm start
+
+To get program ready, npm install
 
 These are the APIs you fetch from
 
