@@ -27,8 +27,7 @@ const qrcodegen = async (req, res) => {
 
     if(qrcodetype == 'menu') {
         let data = {
-            type: qrcodetype,
-            value: req.body.url
+            link: req.body.url
         }
          
         let details = JSON.stringify(data)
@@ -41,8 +40,10 @@ const qrcodegen = async (req, res) => {
         })
     } else if(qrcodetype == 'card') {
         let data = {
-            type: qrcodetype,
-            value: req.body.url
+            link: req.body.url,
+            name: req.body.name,
+            jobTitle: req.body.name,
+            website: req.body.website,
         }
          
         let details = JSON.stringify(data)
@@ -51,7 +52,7 @@ const qrcodegen = async (req, res) => {
         QRCode.toString(details,opts, function (err, QRcode) {
             if(err) return console.log("error occurred")
             console.log(QRcode)
-            res.json({status: "ok"})
+            res.json({status: "ok", data})
         })
     } else if(qrcodetype == 'web'){
         const details = req.body.url
