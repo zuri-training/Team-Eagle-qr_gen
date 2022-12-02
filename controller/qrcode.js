@@ -11,48 +11,51 @@ var sess
 
 
 
-const qrcodegen = (req, res) => {
-    /* let sess = req.session
-    if (sess.user) {
-        
-    } else {
-        res.redirect('/user/login')
-    } */
+const qrcodegen = async (req, res) => {
     let sess = req.session
-    const url = req.body.url;
-    if (url.length === 0) res.send("Empty Data!")
-        QRCode.toString(url,{type:'terminal'}, function (err, QRcode) {
-        
-        if(err) return console.log("error occurred")
-        console.log(QRcode)
-        res.json({status: "ok"})
+    const { id: qrcodetype } = req.params
 
-        /* try {
-            var obj = {
-                username: sess.user,
-                img: {
-                    data: fs.readFileSync(path.join(__dirname + '/uploads/' + QRcode))
-                }
-            }
-            image.create(obj, (err, item) => {
-                if (err) {
-                    console.log(err);
-                }
-                else {
-                   return res.json({status: 'OK'})
-                }
-            });
-        } catch (error) {
-            console.log(error)
-            return res.json({status: 'error'})
-        } */
+    const opts = {
+        errorCorrectionLevel: 'H',
+        type: 'terminal',
+        quality: 0.95,
+        color: {
+         dark: '#208698',
+         light: '#FFF',
+        },
+    }
 
-        /* QRCode.toDataURL(url, (err, src) => {
-            if (err) res.send("Error occured");
-            console.log(src)
+    if(qrcodetype == 'menu') {
+        let data = {
+            type: qrcodetype,
+            value: req.body.url
+        }
+         
+        let details = JSON.stringify(data)
+    
+        if (details.length === 0) res.send("Empty Data!")
+        QRCode.toString(details,opts, function (err, QRcode) {
+            if(err) return console.log("error occurred")
+            console.log(QRcode)
             res.json({status: "ok"})
-        }); */
-    })
+        })
+    } else if(qrcodetype == 'card') {
+        let data = {
+            type: qrcodetype,
+            value: req.body.url
+        }
+         
+        let details = JSON.stringify(data)
+    
+        if (details.length === 0) res.send("Empty Data!")
+        QRCode.toString(details,opts, function (err, QRcode) {
+            if(err) return console.log("error occurred")
+            console.log(QRcode)
+            res.json({status: "ok"})
+        })
+    } else {
+
+    }
 }
 
 const getAllqrCode = (req, res) => {
