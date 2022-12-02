@@ -16,13 +16,14 @@ const qrcodegen = (req, res) => {
     } else {
         res.redirect('/user/login')
     } */
-    const url = req.body.url;
+    const url = req.body;
     if (url.length === 0) res.send("Empty Data!")
         QRCode.toString(url,{type:'terminal'}, function (err, QRcode) {
         
             if(err) return console.log("error occurred")
             console.log(QRcode)
     })
+    
     QRCode.toDataURL(url, (err, src) => {
         if (err) res.send("Error occured");
         console.log(src)
