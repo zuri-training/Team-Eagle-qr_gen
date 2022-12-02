@@ -29,7 +29,7 @@ app.use("/api/qrcode", Route)
 
 //Pages
 app.get('/user/login', (req, res) => {
-    fs.readFile('./public/login.html', function(err, data) {
+    fs.readFile('./public/', function(err, data) {
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.write(data)
         return res.end()
@@ -37,7 +37,7 @@ app.get('/user/login', (req, res) => {
 })
 
 app.get('/user/register', (req, res) => {
-    fs.readFile('./public/register.html', function(err, data) {
+    fs.readFile('./public/', function(err, data) {
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.write(data)
         return res.end()
@@ -47,7 +47,7 @@ app.get('/user/register', (req, res) => {
 app.get('/home', (req, res) => {
     let sess = req.session
     if(sess.user) {
-        fs.readFile('./public/home.html', function(err, data) {
+        fs.readFile('./public/', function(err, data) {
             res.writeHead(200, {'Content-Type': 'text/html'});
             res.write(data)
             return res.end()
