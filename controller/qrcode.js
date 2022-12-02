@@ -53,8 +53,15 @@ const qrcodegen = async (req, res) => {
             console.log(QRcode)
             res.json({status: "ok"})
         })
-    } else {
-
+    } else if(qrcodetype == 'web'){
+        const details = req.body.url
+    
+        if (details.length === 0) res.send("Empty Data!")
+        QRCode.toString(details,opts, function (err, QRcode) {
+            if(err) return console.log("error occurred")
+            console.log(QRcode)
+            res.json({status: "ok"})
+        })
     }
 }
 
