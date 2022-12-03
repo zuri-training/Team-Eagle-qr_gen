@@ -6,7 +6,8 @@ const qrCodeSchema = new mongoose.Schema({
     {
         data: Buffer,
         contentType: String
-    }
+    },
+    password: String
 });
   
 module.exports = new mongoose.model('qrCode', qrCodeSchema);
