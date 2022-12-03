@@ -29,7 +29,7 @@ app.use("/api/qrcode", Route)
 
 //Pages
 app.get('/user/login', (req, res) => {
-    fs.readFile('./public/', function(err, data) {
+    fs.readFile('./public/index.html', function(err, data) {
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.write(data)
         return res.end()
