@@ -134,9 +134,9 @@ const qrcodegen = async (req, res) => {
 
 const getAllqrCode = (req, res) => {
     let sess = req.session
-    qrcode.find({user: sess.user}, (err, items) => {
+    qrcode.find({user: sess.user}, (err, images) => {
         if(err) return console.log("error occurred" + err)
-        res.json({status: 'OK', item: items})
+        res.json({status: 'OK', item: images})
     })
     /* if (sess.user) {
         
@@ -148,9 +148,9 @@ const getAllqrCode = (req, res) => {
 const getqrCode = (req, res) => {
     let sess = req.session
     const {id: itemID} = req.params
-    qrcode.findOne({user: sess.user, _id: itemID}, (err, item) => {
+    qrcode.findOne({user: sess.user, _id: itemID}, (err, image) => {
         if(err) return console.log("error occurred" + err)
-        res.json({status: 'OK', item: item})
+        res.json({status: 'OK', item: image})
     })
 }
 
