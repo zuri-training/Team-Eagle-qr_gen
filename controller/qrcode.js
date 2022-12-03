@@ -40,12 +40,11 @@ const qrcodegen = async (req, res) => {
         /* QRCode.toString(details,opts,
             function (err, QRcode) {
 
-        if(err) return console.log("error occurred")
+            if(err) return console.log("error occurred")
 
-        console.log(QRcode)
+            console.log(QRcode)
         }) */
     } else {
-        
         const passwordd = await bcrypt.hash(password, 10)
 
         const protected = {
