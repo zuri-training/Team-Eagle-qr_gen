@@ -2,16 +2,12 @@ const express = require("express")
 const qrcode = require("../models/qrcode")
 const QRCode = require("qrcode")
 const multer = require("multer")
-const fs = require("fs")
-const path = require("path")
-const app = express()
-const localStorage = require("localStorage")
+const bcrypt = require("bcrypt")
 
 var sess
 
 const qrcodegen = async (req, res) => {
     let sess = req.session
-    const { id: qrcodetype } = req.params
 
     const opts = {
         errorCorrectionLevel: 'H',
@@ -23,7 +19,55 @@ const qrcodegen = async (req, res) => {
         },
     }
 
-    if(qrcodetype == 'menu') {
+    const details = req.body.text
+    const password = req.body.password
+
+    if(password === undefined) {
+        if (details.length === 0) res.send("Empty Data!")
+        QRCode.toDataURL(details, opts, function(err, QRcode) {
+            if(err) return console.log("error occurred")
+            /* console.log(QRcode) */
+
+            //QRcode is store as base64
+            res.json({status: "ok", QRcode})
+        })
+        /* QRCode.toString(details,opts,
+            function (err, QRcode) {
+
+        if(err) return console.log("error occurred")
+
+        console.log(QRcode)
+        }) */
+    } else {
+        
+        const passwordd = await bcrypt.hash(password, 10)
+
+        const protected = {
+            data: details,
+            key: passwordd
+        }
+
+        const protectedcode = JSON.stringify(protected)
+
+        if (protectedcode.length === 0) res.send("Empty Data!")
+
+        QRCode.toDataURL(protectedcode, opts, function(err, QRcode) {
+            if(err) return console.log("error occurred")
+            /* console.log(QRcode) */
+
+            //QRcode is store as base64
+            res.json({status: "ok", QRcode})
+        })
+       /*  QRCode.toString(protectedcode,opts,
+                        function (err, QRcode) {
+
+        if(err) return console.log("error occurred")
+
+        console.log(QRcode)
+    }) */
+    }
+
+    /* if(qrcodetype == 'menu') {
         let data = {
             link: req.body.url,
             name: req.body.name,
@@ -72,7 +116,7 @@ const qrcodegen = async (req, res) => {
             //QRcode is store as base64
             res.json({status: "ok", QRcode})
         })
-    }
+    } */
 }   
 
 const getAllqrCode = (req, res) => {
