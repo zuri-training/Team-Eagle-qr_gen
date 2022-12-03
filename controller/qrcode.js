@@ -1,4 +1,3 @@
-const express = require("express")
 const qrcode = require("../models/qrcode")
 const QRCode = require("qrcode")
 const multer = require("multer")
@@ -121,20 +120,24 @@ const qrcodegen = async (req, res) => {
 
 const getAllqrCode = (req, res) => {
     let sess = req.session
-    if (sess.user) {
+    qrcode.find({user: sess.user}, (err, items) => {
+        if(err) return console.log("error occurred" + err)
+        res.json({status: 'OK', item: items})
+    })
+    /* if (sess.user) {
         
     } else {
         res.redirect('/user/login')
-    }
+    } */
 }
 
 const getqrCode = (req, res) => {
     let sess = req.session
-    if (sess.user) {
-        
-    } else {
-        res.redirect('/user/login')
-    }
+    const {id: itemID} = req.params
+    qrcode.findOne({user: sess.user, _id: itemID}, (err, item) => {
+        if(err) return console.log("error occurred" + err)
+        res.json({status: 'OK', item: item})
+    })
 }
 
 module.exports = {
