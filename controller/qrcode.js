@@ -28,6 +28,13 @@ const qrcodegen = async (req, res) => {
             /* console.log(QRcode) */
 
             //QRcode is store as base64
+            qrcode.create({
+                user: sess.user,
+                img: {
+                    data: QRcode,
+                    contentType:  'image/png'
+                }
+            })
             res.json({status: "ok", QRcode})
         })
         /* QRCode.toString(details,opts,
@@ -56,6 +63,14 @@ const qrcodegen = async (req, res) => {
 
             //QRcode is store as base64
             res.json({status: "ok", QRcode})
+
+            qrcode.create({
+                user: sess.user,
+                img: {
+                    data: QRcode,
+                    contentType:  'image/png'
+                }
+            })
         })
        /*  QRCode.toString(protectedcode,opts,
                         function (err, QRcode) {
