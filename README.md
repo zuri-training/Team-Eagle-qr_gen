@@ -12,7 +12,6 @@ Registration API ("/api/qrcode/user/register")
 
 ChangePassword API ("/api/qrcode/user/changepassword")
 
-
-Logout API ("/api/qrcode/user/logout"), the logout will be like this, "<a href="/api/qrcode/user/logout">Logout</a>
+Logout API ("/api/qrcode/user/logout"), the logout will be like this, "<a href="/api/qrcode/user/logout">Logout</a>"
 
 The public folder is where the frontend will be located
