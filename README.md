@@ -172,8 +172,8 @@ __Designers__ <br/>
 ## Relevant Links
 * Figma Design - <>
 * FigJam Design - <>
-* BackEnd Schema - <>
-* Design Documentation - <>
+* BackEnd Schema - <https://dbdesigner.page.link/yAvNn4PqNFMktKVa9>
+* Design Documentation - <https://docs.google.com/document/d/14mFpYBKEPAeuoxRqO3K20DIdtkxgz91kl9KurvAk9iU/edit?usp=drivesdk>
 * Developers Documentation - <https://docs.google.com/document/d/1QBSMAPA6iUhx8C8LWRgnHWnmK1LxUQhoNJYvlHkmqxo/edit?usp=sharing>
 
 
