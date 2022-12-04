@@ -80,11 +80,11 @@ Project is : *in progress*
 ###  Fork the repository: Click the "Fork" button on the upper right corner of the Repo page.*
 ###  Make a local clone by: 
       - Copying the URL for the forked Repo <br/>
-        https://github.com/zuri-training/Team-Eagle-qr_gen.git <br/>
+           https://github.com/zuri-training/Team-Eagle-qr_gen.git <br/>
       - Create a Folder on your Local machine for the project <br/>
       - Open Command prompt / Terminal in the same folder location <br/>
       - In your Terminal, type: <br/>
-        git clone https://github.com/zuri-training/Team-Eagle-qr_gen.git
+           git clone https://github.com/zuri-training/Team-Eagle-qr_gen.git
 ###  Open terminal and set upstream branch: <br/>
         git remote add upstream https://github.com/zuri-training/Team-Eagle-qr_gen.git
 ###  To add install all dependecies for contributors to begin work<br/>
