@@ -1,4 +1,8 @@
-Create file named .env, it should contain PORT, MONGO_URL, JWT
+Create file named .env, it should contain PORT,MONGO_URL, JWT, cloud_name, api_key, api_secret 
+
+"cloud_name, api_key, api_secret", will be generated when we you create an acount on cloudinary
+
+we will be using cloudinary image server to store the image, on response from the cloudinary, it will give us the url to the image which will be stored in the qrcode schema
 
 To run program, "npm start"
 
