@@ -80,7 +80,7 @@ Project is : *in progress*
 ###  Fork the repository: Click the "Fork" button on the upper right corner of the Repo page.*
 ###  Make a local clone by: 
       - Copying the URL for the forked Repo <br/>
-        *https://github.com/zuri-training/Team-Eagle-qr_gen.git* <br/>
+        https://github.com/zuri-training/Team-Eagle-qr_gen.git <br/>
       - Create a Folder on your Local machine for the project <br/>
       - Open Command prompt / Terminal in the same folder location <br/>
       - In your Terminal, type: <br/>
