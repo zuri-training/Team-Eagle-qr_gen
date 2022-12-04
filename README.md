@@ -25,10 +25,17 @@ This project involve building a web site for generating a (Quick Response) qr_co
 1. `FrontEnd Folder` contains the HTML,CSS and Javascripts code.
 2. `BackEnd Folder` that will contain all the backend code.
 
+## Target Audience
+Although all users are welcome to use QR_gen we have conducted research to pinpoint the individuals or group of people who stand to benefit the most from the solutions we proffer.  
+Some of these Individuals or groups of people include:
+- Business owners who use it to direct customers to their website landing pages, product pages and to process payments, discount coupons, etc.
+- Specialists and professionals who use it to link to their Virtual Contact card also known as VCard and profile pages as well as portfolios and resumés
 
 ## Problem statement
-With the evolution of Technology, quick access to service using an encrypted method has been evolving over the years, platform for the creating this encryption is what we will be building.
+We have identified that it can sometimes be stressful giving customers information about products or offers without having it in littered in the feed or inbox of the customers and also, handing out business cards or business profile might not be feasible as it could get misplaced or damaged and that informaation is lost when that happens.
 
+## Solution 
+Because of how secure and lightweight QR codes are, we devised a means to get all that data into a qrcode that can be used and shared numerous times. This saves time in getting information to customers and also increases the reach of the customer.
 
 ## Framework for building
 
