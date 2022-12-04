@@ -84,22 +84,22 @@ Project is : *in progress*
      In your Terminal, type: <br/>
         `git clone https://github.com/zuri-training/Team-Eagle-qr_gen.git`
 4. Open terminal and set upstream branch: <br/>
-    `git remote add upstream https://github.com/zuri-training/Team-Eagle-qr_gen.git`
+        `git remote add upstream https://github.com/zuri-training/Team-Eagle-qr_gen.git`
 5. To add install all dependecies for contributors to begin work<br/>
-    `npm install` 
+        `npm install` 
 6. Pull upstream to get up to date with the original repo:<br/>
-    `git pull upstream main`
+        `git pull upstream main`
 7. Create a new branch for the task you are working on :<br/>
-    `git checkout -b branchName`<br/>
+        `git checkout -b branchName`<br/>
     *(Make sure your branchName is descriptive in context to the feature you are working on. Also be sure to check which branch you are on using `git status` before you begin working)*
 8. When you're done with your task, do:<br/>
-    `git add`<br/>
+        `git add`<br/>
    - Commit your work with a message:<br/>
-   `git commit -m "message"`
+        `git commit -m "message"`
 9. To avoid conflicts:<br/>
-    `git pull upstream main`
+        `git pull upstream main`
 10. Then push your branch:<br/>
-    `git push origin branchName` - This creates the branch remotely and pushes to that branch on the Github
+        `git push origin branchName` - This creates the branch remotely and pushes to that branch on the Github  
 11. Go to Github and create a new pull request to the main branch. It will then be reviewed and merged into the master.
 
 ## Contributors
@@ -123,7 +123,7 @@ __FrontEnd Contributors__ <br/>
 <http://github.com/Folarinde>
 
 * Ganiu Samuel  
-<http://github.com/SirhmVFX
+<http://github.com/SirhmVFX>
 
 * Chinonso Anyanwu  
 <http://github.com/Nonsomanuel>
@@ -132,29 +132,29 @@ __FrontEnd Contributors__ <br/>
 <http://github.com/>
 
 __Designers__ <br/>
-* Ayodeji Sebanjo  
- <https://github.com/AyodejiSebanjo`
+* Ayodeji Sebanjo (DESIGN LEAD & ASST. TEAM LEAD) 
+ <https://github.com/AyodejiSebanjo>
 
 * Tobiloba Ogunsola  
-`https://github.com/AmazingTobz`
+<https://github.com/AmazingTobz>
 
-* Gideon Lyomu
-`https://github.com/lyomu`
+* Gideon Lyomu  
+<https://github.com/lyomu>
 
-* Bismark Ansah Anim
-`https://github.com/1BISMARK`
+* Bismark Ansah Anim  
+<https://github.com/1BISMARK>
 
-* Eluwa Chika
-`https://github.com/`
+* Eluwa Chika  
+<https://github.com/>
 
-* Oladuntoye Temitope
-`https://github.com/Temitopeoladuntoye`
+* Oladuntoye Temitope  
+<https://github.com/Temitopeoladuntoye>
 
-* Akpewhe Newworld
-`https://github.com/akpewhelois`
+* Akpewhe Newworld  
+<https://github.com/akpewhelois>
 
 * Zaynab Adegoke 
-`https://github.com/`
+<https://github.com/>
 <br/>
 
 
