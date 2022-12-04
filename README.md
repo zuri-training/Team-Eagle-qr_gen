@@ -120,22 +120,22 @@ __FrontEnd Contributors__ <br/>
 <http://github.com/289volts> (TEAM LEAD)
 
 * Folarinde Olusola  
-`http://github.com/Folarinde`
+<http://github.com/Folarinde>
 
-* Ganiu Samuel
-`http://github.com/SirhmVFX`
+* Ganiu Samuel  
+<http://github.com/SirhmVFX
 
-* Chinonso Anyanwu
-`http://github.com/Nonsomanuel`
+* Chinonso Anyanwu  
+<http://github.com/Nonsomanuel>
 
-* Virtue Azuka
-`http://github.com/`
+* Virtue Azuka  
+<http://github.com/>
 
 __Designers__ <br/>
-* Ayodeji Sebanjo
- `https://github.com/AyodejiSebanjo`
+* Ayodeji Sebanjo  
+ <https://github.com/AyodejiSebanjo`
 
-* Tobiloba Ogunsola
+* Tobiloba Ogunsola  
 `https://github.com/AmazingTobz`
 
 * Gideon Lyomu
