@@ -73,6 +73,9 @@ __Authenticated Users__ - A user that has fully registered and has completed all
 ## Project Status
 Project is : *in progress*
 
+## Test
+        test product
+
 ## Contributors Guide
 1. Visit the Repository to the Project on Github Website   
         https://github.com/zuri-training/qr-gen-proj-team55
