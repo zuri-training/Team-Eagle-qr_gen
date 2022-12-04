@@ -79,29 +79,29 @@ Project is : *in progress*
         <https://github.com/zuri-training/qr-gen-proj-team55>
 ###  Fork the repository: Click the "Fork" button on the upper right corner of the Repo page.*
 ###  Make a local clone by: 
-        Copying the URL for the forked Repo <br/>
-        `https://github.com/zuri-training/Team-Eagle-qr_gen.git` <br/>
-        Create a Folder on your Local machine for the project <br/>
-        Open Command prompt / Terminal in the same folder location <br/>
-        In your Terminal, type: <br/>
-        `git clone https://github.com/zuri-training/Team-Eagle-qr_gen.git`
+      - Copying the URL for the forked Repo <br/>
+        *https://github.com/zuri-training/Team-Eagle-qr_gen.git* <br/>
+      - Create a Folder on your Local machine for the project <br/>
+      - Open Command prompt / Terminal in the same folder location <br/>
+      - In your Terminal, type: <br/>
+        git clone https://github.com/zuri-training/Team-Eagle-qr_gen.git
 ###  Open terminal and set upstream branch: <br/>
-        `git remote add upstream https://github.com/zuri-training/Team-Eagle-qr_gen.git`
+        git remote add upstream https://github.com/zuri-training/Team-Eagle-qr_gen.git
 ###  To add install all dependecies for contributors to begin work<br/>
-        `npm install` 
+        npm install
 ###  Pull upstream to get up to date with the original repo:<br/>
-        `git pull upstream main`
+        git pull upstream main
 ###  Create a new branch for the task you are working on :<br/>
-        `git checkout -b branchName`<br/>
+        git checkout -b branchName<br/>
     *(Make sure your branchName is descriptive in context to the feature you are working on. Also be sure to check which branch you are on using `git status` before you begin working)*
 ###  When you're done with your task, do:<br/>
-        `git add`<br/>
+        git add <br/>
    - Commit your work with a message:<br/>
-        `git commit -m "message"`
+        git commit -m "message"
 ###  To avoid conflicts:<br/>
-        `git pull upstream main`
+        git pull upstream main
 ###  Then push your branch:<br/>
-        `git push origin branchName` - This creates the branch remotely and pushes to that branch on the Github  
+        git push origin branchName - This creates the branch remotely and pushes to that branch on the Github  
 ###  Go to Github and create a new pull request to the main branch. It will then be reviewed and merged into the master.
 
 ## Contributors
