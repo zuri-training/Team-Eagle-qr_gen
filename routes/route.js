@@ -22,7 +22,7 @@ const {
 } = require("../controller/auth")
 
 const {
-    qrcodegen,
+    storeQRcode,
     getAllqrCode,
     getqrCode
 } = require("../controller/qrcode")
@@ -38,6 +38,6 @@ router.route('/user/logout').get(logoutUser)
 //QR code Generator
 router.route('/user/qrCode').get(getAllqrCode)
 router.route('/user/qrCode/:id').get(getqrCode)
-router.route('/generate').post(upload.single('image'), qrcodegen) 
+router.route('/storeQRcode').post( storeQRcode) 
 
 module.exports = router
