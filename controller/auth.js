@@ -20,7 +20,7 @@ const authUser = async(req, res) => {
 
     if(await bcrypt.compare(password, user.password)) {
 
-        const token = jwt.sign(
+        jwt.sign(
             { 
                 id: user._id, 
                 username: user.username
@@ -28,10 +28,8 @@ const authUser = async(req, res) => {
             process.env.JWT
         )
         sess = req.session
-        sess.user = token
-        localStorage.setItem('user', username)
-        return res.json({status:'ok', data: token})
-        /* res.redirect('/home') */
+        sess.user = user._id
+        return res.json({status:'ok', data: sess.user})
     }
     res.json({status:'error', error: 'Invalid username/pasword'})
 }
