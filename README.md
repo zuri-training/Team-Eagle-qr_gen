@@ -14,11 +14,12 @@
 * [Relevant Links](#relevant-links)
 * [Acknowledgements](#acknowledgements)
 
-
+## Project Name
+SMART QR
 
 ## Project Description
 
-This project involve building a web site for generating a (Quick Response) qr_code where user that visit the site can only generate the code after registration. The code generated should also be able to use both on and offline and can be shared via email, can be downloaded in PNG and PDF
+This project involve building a web site for generating a (Quick Response) qr_code where users can visit and generate the code after registration. The code generated should also be able to use both on and offline and can be shared via email, can be downloaded in PNG and PDF
 
 * __The repository file will be arranged in the following order
 
