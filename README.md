@@ -155,7 +155,7 @@ __Designers__ <br/>
 * Akpewhe Newworld  
 <https://github.com/akpewhelois>
 
-* Zaynab Adegoke 
+* Zaynab Adegoke  
 <https://github.com/>
 <br/>
 
