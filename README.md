@@ -74,7 +74,7 @@ __Authenticated Users__ - A user that has fully registered and has completed all
 Project is : *in progress*
 
 ## Contributors Guide
-1. Visit the Repository to the Project on Github Website 
+1. Visit the Repository to the Project on Github Website   
         https://github.com/zuri-training/qr-gen-proj-team55
 2. Fork the repository: Click the "Fork" button on the upper right corner of the Repo page.*
 3. Make a local clone by: 
