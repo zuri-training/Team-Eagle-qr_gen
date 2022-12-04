@@ -76,7 +76,7 @@ Project is : *in progress*
 
 ## Contributors Guide
 ### Visit the Repository to the Project on Github Website   
-        <https://github.com/zuri-training/qr-gen-proj-team55>
+        https://github.com/zuri-training/qr-gen-proj-team55
 ###  Fork the repository: Click the "Fork" button on the upper right corner of the Repo page.*
 ###  Make a local clone by: 
       - Copying the URL for the forked Repo <br/>
