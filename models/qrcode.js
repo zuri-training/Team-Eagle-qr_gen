@@ -2,11 +2,7 @@ const mongoose = require('mongoose');
   
 const qrCodeSchema = new mongoose.Schema({
     user: String,
-    img:
-    {
-        data: Buffer,
-        contentType: String
-    },
+    img: String,
     password: String
 });
   
