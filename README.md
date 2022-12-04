@@ -105,21 +105,21 @@ Project is : *in progress*
 ## Contributors
 
 __BackEnd Contributors__ <br/>
-* Praise Bakare (BACKEND LEAD)
-`https://github.com/Praisebakare`
+* Praise Bakare (BACKEND LEAD)  
+<https://github.com/Praisebakare>
 
-* Otunba Ola
-`https://github.com/richotunba`
+* Otunba Ola  
+<https://github.com/richotunba>
 
-* Temiede Emmanuel
-`http://github.com/dacoolguy1`
+* Temiede Emmanuel  
+<http://github.com/dacoolguy1>
 <br/>
 
 __FrontEnd Contributors__ <br/>
-* Joshua Roland
-`http://github.com/289volts (TEAM LEAD)`
+* Joshua Roland  
+<http://github.com/289volts> (TEAM LEAD)
 
-* Folarinde Olusola
+* Folarinde Olusola  
 `http://github.com/Folarinde`
 
 * Ganiu Samuel
@@ -160,11 +160,11 @@ __Designers__ <br/>
 
 
 ## Relevant Links
-* Figma Design - ``
-* FigJam Design - ``
-* BackEnd Schema - ``
-* Design Documentation - ``
-* General Documentation - ``
+* Figma Design - <>
+* FigJam Design - <>
+* BackEnd Schema - <>
+* Design Documentation - <>
+* Developers Documentation - <https://docs.google.com/document/d/1QBSMAPA6iUhx8C8LWRgnHWnmK1LxUQhoNJYvlHkmqxo/edit?usp=sharing>
 
 
 
