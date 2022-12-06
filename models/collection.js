@@ -10,13 +10,14 @@ const collectionSchema = new mongoose.Schema({
     jobTitle: String,
     businessName: String,
     description: String,
+    address: String,
     productTitle: String,
     CatalogTitle: String,
     phonenumber: String,
     websiteUrl: String,
-    openingDay: String,
+    openingDay: Array,
     OpenAndCloseTime: TimeRanges,
-    socialMedia: String
+    socialMedia: Array
 });
   
 module.exports = new mongoose.model('collection', collectionSchema);
