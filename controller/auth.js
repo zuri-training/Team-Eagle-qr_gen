@@ -28,7 +28,7 @@ const authUser = async(req, res) => {
             process.env.JWT
         )
         sess = req.session
-        sess.user = user._id
+        sess.user = user._id    
         return res.json({status:'ok', user: sess.user})
     }
     res.json({status:'error', error: 'Invalid username/pasword'})
@@ -46,7 +46,7 @@ const registerUser = async(req, res) => {
         })
     }
 
-    if(plainTextPassword != reEnterPassword) {
+    if(plainTextPassword !== reEnterPassword) {
         return res.json({
             status: 'error',
             error: 'Password Does not Match'
@@ -114,7 +114,7 @@ const changePassword = async(req, res) => {
             })
         }
 
-        if(plainTextPassword == reEnterPassword) {
+        if(plainTextPassword !== reEnterPassword) {
             return res.json({
                 status:'error', 
                 error: 'Password not the same'
