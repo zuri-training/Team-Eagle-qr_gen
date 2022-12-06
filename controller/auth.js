@@ -29,7 +29,7 @@ const authUser = async(req, res) => {
         )
         sess = req.session
         sess.user = user._id
-        return res.json({status:'ok', data: sess.user})
+        return res.json({status:'ok', user: sess.user})
     }
     res.json({status:'error', error: 'Invalid username/pasword'})
 }
