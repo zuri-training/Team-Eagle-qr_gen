@@ -131,7 +131,7 @@ const sites = async(req, res) => {
 // ability to edit, update or delete qr code data and the entire qr code
 
 // update QR code data
-exports.updateQr = async (req, res) => {
+const updateQr = async (req, res) => {
 
     try {
         let id = req.params.id;
@@ -160,7 +160,7 @@ exports.updateQr = async (req, res) => {
 
 // delete Single QR code data
 
-exports.deleteSingleQR = async (req, res) => {
+const deleteSingleQR = async (req, res) => {
     try {
         let id = req.params.id;
         let deleted = await qrcode.findOneAndDelete(id);
@@ -184,7 +184,7 @@ exports.deleteSingleQR = async (req, res) => {
 
 // delete entire QR code data
 
-exports.deleteEntireQR = async (req, res) => {
+const deleteEntireQR = async (req, res) => {
     try {
         let id = req.params.id;
         let deleted = await qrcode.deleteMany();
@@ -211,4 +211,7 @@ module.exports = {
     getAllqrCode,
     getqrCode,
     sites,
+    updateQr,
+    deleteSingleQR,
+    deleteEntireQR,
 }
