@@ -134,6 +134,8 @@ const sites = async(req, res) => {
 const updateQr = async (req, res) => {
     let sess = req.session
     if (sess.user) {
+
+        //For the updating of this qrcode, what exactly are we updating
         try {
             let id = req.params.id;
             let sess = await req.res;
@@ -172,12 +174,17 @@ const deleteSingleQR = async (req, res) => {
 
             //this will delete based on the id and the user
             let deleted = await qrcode.findOneAndDelete({userID: sess.user, _id: id});
+            
+            //Also delete the qrcode collection
+            await collection.findOneAndDelete({userID: sess.user,qrcodeID: id})
+            
             //let deleted = await qrcode.findo
             if (!deleted)
                 return res.status(400).json({
                     success: false,
                     message: " The QR code was not deleted"
                 });
+
             return res.status(200).json({success: true, messsage: "QR code data delted successfully"});
     
         } catch (error) {
@@ -201,7 +208,10 @@ const deleteEntireQR = async (req, res) => {
         try {
             //for the delete, we will delete based on the login user
             let deleted = await qrcode.deleteMany({userID: sess.user});
-            //let deleted = await qrcode.findo
+
+            //This will delete all collection for the user
+            await collection.deleteMany({userID: sess.user})
+
             if (!deleted)
                 return res.status(400).json({
                     success: false,
