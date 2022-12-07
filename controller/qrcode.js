@@ -124,7 +124,8 @@ const getqrCode = async (req, res) => {
 const sites = async(req, res) => {
     const info = {
         userID: req.params.userID,
-        qrcode: req.params.fruitColor
+        qrcodeID: req.params.qrcodeID,
+        qrcodeType: req.params.qrCodeType
     }
 }
 
