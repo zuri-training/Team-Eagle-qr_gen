@@ -132,52 +132,63 @@ const sites = async(req, res) => {
 
 // update QR code data
 const updateQr = async (req, res) => {
-
-    try {
-        let id = req.params.id;
-        let sess = await req.res;
-        let update = await qrcode.findOneAndUpdate(id, sess, {new: true} );
-        if (!update) {
-            return res.status(400).json({
-                success: false,
-                message: "The QR code was not updated",
-            });
+    let sess = req.session
+    if (sess.user) {
+        try {
+            let id = req.params.id;
+            let sess = await req.res;
+            let update = await qrcode.findOneAndUpdate(id, sess, {new: true} );
+            if (!update) {
+                return res.status(400).json({
+                    success: false,
+                    message: "The QR code was not updated",
+                });
+            }
+            return res.status(200).json({
+                success: true,
+                message: "QR code updated",
+                sess: update,
+        });
+        } catch (error) {
+            res.status(500).json({
+                suecces: false,
+                message : "Internal server error",
+                error: error.message
+            })
+            
         }
-        return res.status(200).json({
-            success: true,
-            message: "QR code updated",
-            sess: update,
-    });
-    } catch (error) {
-        res.status(500).json({
-            suecces: false,
-            message : "Internal server error",
-            error: error.message
-        })
-        
+    } else {
+        res.redirect('/user/login')
     }
 };
 
 // delete Single QR code data
 
 const deleteSingleQR = async (req, res) => {
-    try {
-        let id = req.params.id;
-        let deleted = await qrcode.findOneAndDelete(id);
-        //let deleted = await qrcode.findo
-        if (!deleted)
-            return res.status(400).json({
-                success: false,
-                message: " The QR code was not deleted"
-            });
-        return res.status(200).json({success: true, messsage: "QR code data delted successfully"});
+    let sess = req.session
+    if (sess.user) {
+        try {
+            let id = req.params.id;
 
-    } catch (error) {
-        res.status(500).json({
-            success: false,
-            message: "Internal server error",
-            error: error.message,
-        })
+            //this will delete based on the id and the user
+            let deleted = await qrcode.findOneAndDelete({userID: sess.user, _id: id});
+            //let deleted = await qrcode.findo
+            if (!deleted)
+                return res.status(400).json({
+                    success: false,
+                    message: " The QR code was not deleted"
+                });
+            return res.status(200).json({success: true, messsage: "QR code data delted successfully"});
+    
+        } catch (error) {
+            res.status(500).json({
+                success: false,
+                message: "Internal server error",
+                error: error.message,
+            })
+        }
+    } else {
+        res.redirect('/user/login')
     }
 }
 
@@ -185,23 +196,28 @@ const deleteSingleQR = async (req, res) => {
 // delete entire QR code data
 
 const deleteEntireQR = async (req, res) => {
-    try {
-        let id = req.params.id;
-        let deleted = await qrcode.deleteMany();
-        //let deleted = await qrcode.findo
-        if (!deleted)
-            return res.status(400).json({
+    let sess = req.session
+    if (sess.user) {
+        try {
+            //for the delete, we will delete based on the login user
+            let deleted = await qrcode.deleteMany({userID: sess.user});
+            //let deleted = await qrcode.findo
+            if (!deleted)
+                return res.status(400).json({
+                    success: false,
+                    message: " The QR code was not deleted"
+                });
+            return res.status(200).json({success: true, messsage: "All QR code data delted successfully"});
+    
+        } catch (error) {
+            res.status(500).json({
                 success: false,
-                message: " The QR code was not deleted"
-            });
-        return res.status(200).json({success: true, messsage: "All QR code data delted successfully"});
-
-    } catch (error) {
-        res.status(500).json({
-            success: false,
-            message: "Internal server error",
-            error: error.message,
-        })
+                message: "Internal server error",
+                error: error.message,
+            })
+        }
+    } else {
+        res.redirect('/user/login')
     }
 }
 
