@@ -3,8 +3,6 @@
 
 ## Table of Contents
 
-* [Project Description](#project-description)
-* [Problem statement](#problem-statement)
 * [Framework for building](#framework-for-building)
 * [Features of the Website](#features-of-the-website)
 * [Product Specification](#product-specialization)
@@ -18,26 +16,11 @@
 ## Project Name
 SMART QR
 
-## Project Description
-
-This project involve building a web site for generating a (Quick Response) qr_code where users can visit and generate the code after registration. The code generated should also be able to use both on and offline and can be shared via email, can be downloaded in PNG and PDF
 
 * __The repository file will be arranged in the following order
 
 1. `FrontEnd Folder` contains the HTML,CSS and Javascripts code.
 2. `BackEnd Folder` that will contain all the backend code.
-
-## Target Audience
-Although all users are welcome to use QR_gen we have conducted research to pinpoint the individuals or group of people who stand to benefit the most from the solutions we proffer.  
-Some of these Individuals or groups of people include:
-- Business owners who use it to direct customers to their website landing pages, product pages and to process payments, discount coupons, etc.
-- Specialists and professionals who use it to link to their Virtual Contact card also known as VCard and profile pages as well as portfolios and resumés
-
-## Problem statement
-We have identified that it can sometimes be stressful giving customers information about products or offers without having it in littered in the feed or inbox of the customers and also, handing out business cards or business profile might not be feasible as it could get misplaced or damaged and that informaation is lost when that happens.
-
-## Solution 
-Because of how secure and lightweight QR codes are, we devised a means to get all that data into a qrcode that can be used and shared numerous times. This saves time in getting information to customers and also increases the reach of the customer.
 
 ## Framework for building
 
