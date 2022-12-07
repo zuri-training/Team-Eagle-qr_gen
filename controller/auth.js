@@ -18,7 +18,7 @@ const authUser = async(req, res) => {
 
     if(await bcrypt.compare(password, user.password)) {
 
-        jwt.sign(
+    const token = jwt.sign(
             { 
                 id: user._id, 
                 username: user.username
@@ -26,7 +26,8 @@ const authUser = async(req, res) => {
             process.env.JWT
         )
         sess = req.session
-        sess.user = user._id    
+        sess.user = user._id 
+        sess.token = token   
         return res.json({status:'ok', user: sess.user})
     }
     res.json({status:'error', error: 'Invalid username/pasword'})
@@ -103,7 +104,7 @@ const changePassword = async(req, res) => {
     if (sess.user) {
         const {newPassword:plainTextPassword, reEnterPassword} = req.body
 
-        const token = sess.user
+        const token = sess.token
 
         if(plainTextPassword.length < 8) {
             return res.json({
@@ -112,7 +113,7 @@ const changePassword = async(req, res) => {
             })
         }
 
-        if(plainTextPassword !== reEnterPassword) {
+        if(plainTextPassword != reEnterPassword) {
             return res.json({
                 status:'error', 
                 error: 'Password not the same'
