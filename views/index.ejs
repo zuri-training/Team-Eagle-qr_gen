@@ -8,18 +8,99 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
             rel="stylesheet">
-        <link rel="stylesheet" href="./style/style.css">
-        <title>Document</title>
-    </head>
-    <body>
-        <header>
-
+        <link rel="stylesheet" href="/style/style.css">
+        <title>Home | <%= title %></title>
+        </head>
+        <body>
+            <header>
+                <div class="desktop-navigation flex">
+                    <img src="/assets/images/Logo.png" alt="logo image">
+                    <nav class="desktop-nav">
+                        <ul class="nav-links flex">
+                            <li class=""><a href="">English</a></li>
+                            <li class=""><a href="">FAQs</a></li>
+                            <li class=""><a href="">About us</a></li>
+                            <li class=""><a href="">Sign Up</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <nav class="mobile-nav">
+                    <ul class="nav-links flex-col">
+                        <div class="close flex">
+                            <img src="/assets/icons/close.png" alt="close button">
+                            <p class="mobile-nav__heading">Menu</p>
+                        </div>
+                        <li class="">
+                            <a href="" class="flex">
+                                <div class="icon-text flex">
+                                    <img src="/assets/icons/account.png" alt="go to account settings">
+                                    <span>My Account</span>
+                                </div>
+                                <img src="/assets/icons/right-chevron.png" alt="">
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="" class="flex">
+                                <div class="icon-text flex">
+                                    <img src="/assets/icons/dashboard.png" alt="go to dashboard">
+                                    <span>Dashboard</span>
+                                </div>
+                                <img src="/assets/icons/right-chevron.png" alt="">
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="" class="flex">
+                                <div class="icon-text flex">
+                                    <img src="/assets/icons/languages.png" alt="go to languages settings"
+                                    <span>Languages</span>
+                            </div>
+                            <img src="/assets/icons/right-chevron.png" alt="">
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="" class="flex">
+                            <div class="icon-text flex">
+                                <img src="/assets/icons/contact-us.png" alt="go to contact us page">
+                                <span>Contact Us</span>
+                            </div>
+                            <img src="/assets/icons/right-chevron.png" alt="">
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="" class="flex">
+                            <div class="icon-text flex">
+                                <img src="/assets/icons/help.png" alt="search for help">
+                                <span>Help</span>
+                            </div>
+                            <img src="/assets/icons/right-chevron.png" alt="">
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="" class="flex">
+                            <div class="icon-text flex">
+                                <img src="/assets/icons/faq.png" alt="go to FAQs">
+                                <span>FAQs</span>
+                            </div>
+                            <img src="/assets/icons/right-chevron.png" alt="">
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="" class="flex">
+                            <div class="icon-text flex">
+                                <img src="/assets/icons/faq.png" alt="go to about us page">
+                                <span>About SmartQR</span>
+                            </div>
+                            <img src="/assets/icons/right-chevron.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </header>
         <main>
             <div class="wrapper">
                 <section class="hero-section">
                     <div class="hero-section__container w-90">
-                        <div class="hero-section__r-side flex-col">
+                        <div class="hero-section__l-side flex-col">
                             <h1>Easy QR Code
                                 generator for
                                 <span class="hero-section__colored-text">Businesses</span>
@@ -28,12 +109,12 @@
                                 communication between you and your Clients with SmartQR Code generator</p>
                             <div class="hero-links flex-col">
                                 <a class="hero-section__generate flex" href="">Generate QRcode <img
-                                        src="./assets/icons/arrow_right.png" alt" right arrow"></a>
+                                        src="/assets/icons/arrow_right.png" alt" right arrow"></a>
                                 <a class="hero-section__login" href="">Log in</a>
                             </div>
                         </div>
-                        <div class="hero-section__l-side flex">
-                            <img src="./assets/images/hero-img.png" alt="hero-section image">
+                        <div class="hero-section__r-side flex">
+                            <img src="/assets/images/hero-img.png" alt="hero-section image">
                         </div>
                     </div>
                 </section>
@@ -43,7 +124,7 @@
                             <h2>Why
                                 <span class="why-us__colored-text">SmartQR</span>
                                 Code
-                                generator?</h2>
+                                generator</h2>
                         </div>
                         <p class="why-us__intro w-90">With our QR code generator you can easily make friendly SmartQR
                             code
@@ -61,8 +142,10 @@
                 <section class="how-it-works">
                     <div class="how-it-works__container w-90 flex-col">
                         <div class="how-it-works__img flex">
-                            <img class="mobile-only" src="./assets/images/girl-half.png" alt="illustration for how-it-works section">
-                            <img class="tablet-view" src="./assets/images/girl.png" alt="illustration for how-it-works section">
+                            <img class="mobile-only" src="/assets/images/girl-half.png" alt="illustration for
+                                how-it-works section">
+                            <img class="tablet-view" src="/assets/images/girl.png" alt="illustration for how-it-works
+                                section">
                         </div>
                         <div class="how-it-works__text-content text-center">
                             <div class="how-it-works__header">
@@ -107,27 +190,27 @@
                         </div>
                         <div class="uses__text-content flex-col text-center">
                             <div class="uses__card flex-col">
-                                <img src="./assets/images/qr-card.png" alt="create qrcode as business card">
+                                <img src="/assets/images/qr-card.png" alt="create qrcode as business card">
                                 <h4>QR Code for Business cards</h4>
                                 <p>All your business cards information in one scan with ease!</p>
-                                <a class="flex" href="">Generate code<img src="./assets/icons/arrow_right_white.png"
+                                <a class="flex" href="">Generate code<img src="/assets/icons/arrow_right_white.png"
                                         alt=""></a>
                             </div>
                             <div class="uses__card flex-col">
-                                <img src="./assets/images/qr-products.png" alt="create qrcode for your products">
+                                <img src="/assets/images/qr-products.png" alt="create qrcode for your products">
                                 <h4>QR Code for Products</h4>
                                 <p>Generate QR codes showcase your products for easy advertising.
                                 </p>
-                                <a class="flex" href="">Generate code<img src="./assets/icons/arrow_right_white.png"
+                                <a class="flex" href="">Generate code<img src="/assets/icons/arrow_right_white.png"
                                         alt=""></a>
                             </div>
                             <div class="uses__card flex-col">
-                                <img src="./assets/images/qr-website.png" alt="create qrcode for your website">
+                                <img src="/assets/images/qr-website.png" alt="create qrcode for your website">
                                 <h4>QR Code for Websites</h4>
                                 <p>Create a unique personalized QR code for your websites
                                 </p>
                                 <a class="flex" href="">Generate code<img
-                                        src="./assets/icons/arrow_right_white.png" alt=""></a>
+                                        src="/assets/icons/arrow_right_white.png" alt=""></a>
                             </div>
                         </div>
                     </div>
@@ -141,23 +224,23 @@
                         </div>
                         <div class="testimonial__cards flex-col">
                             <div class="testimonial__card flex-col">
-                                <img src="./assets/images/client-1.png" alt="client 1">
+                                <img src="/assets/images/client-1.png" alt="client 1">
                                 <p class="comment">“Highly recommended for generating QR codes.”</p>
                                 <p class="author">Bobbie Mobolaji</p>
                             </div>
                             <div class="testimonial__card flex-col">
-                                <img src="./assets/images/client-2.png" alt="client 2">
+                                <img src="/assets/images/client-2.png" alt="client 2">
                                 <p class="comment">“SMARTQR have everyting i need to connect with my clients”</p>
                                 <p class="author">Janet Adepoju</p>
                             </div>
                             <div class="testimonial__card flex-col">
-                                <img src="./assets/images/client-3.png" alt="client 3">
+                                <img src="/assets/images/client-3.png" alt="client 3">
                                 <p class="comment">“Thank you! This is a platform i recommend for online business
                                     owners.” </p>
                                 <p class="author">Achenyo Joy</p>
                             </div>
                             <div class="testimonial__card flex-col">
-                                <img src="./assets/images/client-4.png" alt="client 4">
+                                <img src="/assets/images/client-4.png" alt="client 4">
                                 <p class="comment">"SmartQR is just getting better by the day. i love to see it."</p>
                                 <p class="author">Sammie Adeyinka D.</p>
                             </div>
@@ -165,16 +248,17 @@
                     </div>
                 </section>
                 <footer class="text-center">
-                        <div class="contact-us__container">
-                            <div class="dark-bg-mobile"></div>
-                            <div class="contact-card flex-col">
-                                <h2>Talk with our customer representative today</h2>
-                                <a href="" class="">Contact Us</a>
-                            </div>
-                        </div>
+                    <div class="contact-us__container">
+                        <div class="dark-bg-mobile"></div>
                         <div class="brand-bg"></div>
-                        <div class="black-bg footer-top__container flex-col">
-                            <img src="./assets/images/footer-Logo.png" alt="footer-logo" class="">
+                        <div class="contact-card flex-col">
+                            <h2>Talk with our customer representative today</h2>
+                            <a href="" class="">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="black-bg footer-top__container flex-col">
+                        <img src="/assets/images/footer-Logo.png" alt="footer-logo" class="">
+                        <div class="footer-links__container flex-col">
                             <div class="footer-links flex-col">
                                 <h3>Site maps</h3>
                                 <a href="" class="">Home</a>
@@ -198,16 +282,17 @@
                             <div class="social-links flex-col">
                                 <h3>Let's do it!</h3>
                                 <div class="socials flex">
-                                    <img src="./assets/icons/footer-fb.png" alt="facebook icon" class="">
-                                    <img src="./assets/icons/footer-bit.png" alt="bit icon" class="">
-                                    <img src="./assets/icons/footer-github.png" alt="github icon" class="">
-                                    <img src="./assets/icons/footer-message.png" alt="message icon" class="">
-                                    <img src="./assets/icons/footer-instagram.png" alt="instagram icon" class="">
-                                    <img src="./assets/icons/footer-figma.png" alt="figma icon" class="">
+                                    <img src="/assets/icons/footer-fb.png" alt="facebook icon" class="">
+                                    <img src="/assets/icons/footer-bit.png" alt="bit icon" class="">
+                                    <img src="/assets/icons/footer-github.png" alt="github icon" class="">
+                                    <img src="/assets/icons/footer-message.png" alt="message icon" class="">
+                                    <img src="/assets/icons/footer-instagram.png" alt="instagram icon" class="">
+                                    <img src="/assets/icons/footer-figma.png" alt="figma icon" class="">
                                 </div>
                             </div>
                         </div>
-                        <div class="footer-bottom__container">
+                    </div><div class="footer-bottom__wrapper">
+                        <div class="footer-bottom__container flex-col">
                             <div class="footer-bottom__r-side flex">
                                 <a href="" class="">Privacy Policy</a>
                                 <a href="" class="">Terms of Use</a>
@@ -219,6 +304,7 @@
                                 <p>&copy; 2022 All Rights Reserved</p>
                             </div>
                         </div>
+                    </div>
                 </footer>
             </div>
         </main>
