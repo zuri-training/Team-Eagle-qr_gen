@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/css/loginstyle.css">
+    <title>Sign up</title>
+</head>
+<body>
+    <form id="Main"  method="post" action="/register">
+        <div class="float-parent-element">
+            <div class="float-child-element1">
+
+              <div class="red ">
+                <h1 id="Welcome">Create your account,</h1>
+                <h3>Enter your information to create your SmartQR  account</h3>
+                <div class="input-icons">
+                    <p id="label">
+                        Name
+                    </p>
+                    <input class="input-field" type="text" id="username" name="name" placeholder="Enter your Name here" required>
+                    <p id="label">Email</p>
+                    <p id="form" class = "inputWithIcon">
+                        <i class="validation fa fa-envelope icon"></i>
+                    
+                        <input class="input-field" type="email" id="email" name="username" placeholder="Enter your Email address" required>
+                    </p>
+                    <p id="padd">Please include “@” in the email address</p>
+                    <p id="label">Enter Password</p>
+                    <p id="form" class = "inputWithIcon">
+                        <i class=" fa fa-lock icon" ></i>
+                        <input class="input-field" name="password" type="password" id="#id_password" placeholder="Password" required>
+                        <i class="fa fa-eye icon" onclick="myFunction()" id="togglePassword"></i>
+                    </p>
+                    <p id="label">Confrim your Password</p>
+                    <p id="form" class = "inputWithIcon">
+                        <i class=" fa fa-lock icon" ></i>
+                        <input class="input-field" type="password" id="#password1" placeholder="Confirm password" required>
+                        <i class="fa fa-eye icon" onclick="myFunction1()" id="togglePassword"></i>
+                    </p>
+                    <p class="remember">
+                        <input class="remember2"  type="checkbox" onclick="myFunction()">Remember Me
+                    </p>
+                    <button type="submit" class=" button">Create Account</button>
+                    <p id="label">
+                        Already have an account ? <a href="index.ejx">Login</a>                   
+                    </p>
+                    <p id="label">
+                        By clicking create account, you have agreed to our Terms & Condition.
+                    </p>
+                </div>
+                
+              </div>
+            </div>
+            <div class="float-child-element2">
+                <img src="images/createaccount.png" id="sed" alt="sedan" onclick="register()">
+              
+            </div>
+          </div>
+
+        </form>
+        <script src="index.js"></script>
+        <script src="server.js"></script>
+        <script src="server1.js"></script>
+</body>
+</html>
