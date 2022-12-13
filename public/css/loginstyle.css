@@ -34,24 +34,48 @@
     float: right; 
     width: 50%; 
 }
+.float-child-element11 { 
+    
+    width: 75%; 
+}
 .mein { 
      
     margin-left: 30%; 
     
     height: 100px; 
 } 
+.red1 { 
+    margin-left: 50%; 
+    height: 1000px; 
+} 
 .red { 
      
-    margin-left: 50%; 
+    margin-left: 30%; 
     height: 100px; 
 } 
-.yellow { 
-    margin-left: 50%; 
-    height: 100px; 
-    background-color: yellow; 
-}
+
 #Welcome{
     color: #1768EF;
+}
+.btn-group-vertical {
+    position: absolute;
+    align-content: center;
+    
+}
+#stbButton {
+    background-color: #F5F5F5;
+    color: #1768EF;
+    width: 225px;
+    margin: 10px;
+    height: 40px;
+    border-color: #1768EF;
+}
+#cdbButton {
+    background-color: #1768EF;
+    color: #F5F5F5;
+    min-width: 225px;
+    margin: 10px;
+    height: 40px;
 }
 .remember {
     margin-left: 0;
@@ -90,10 +114,30 @@
 
     color: #aaa;
 }
+.icon1  {
+    padding: 0;
+    
+    float: right;
+    margin: 0;
 
-  
+    color: #aaa;
+}
+#btn1 {
+    height: 2;
+    padding: 0;
+    margin: 0;
+    width: 2;
+    float: right;
+} 
 .input-field {
     width: 350px;
+    padding: 10px;
+    color: #777777;
+    margin: 0;
+    outline: none;
+}
+.input-field1 {
+    width: 530px;
     padding: 10px;
     color: #777777;
     margin: 0;
@@ -138,7 +182,14 @@ background: #FEFEFE;
     border-radius: 8px;
     margin-top: 30px;
   }
-  
+  #catal {
+    margin-bottom: 5;
+    margin-top: 5;
+  }
+  #fii {
+    margin-bottom: 0;
+    margin-top: 0;
+  } 
     
   .inputWithIcon input[type="email"] {  
     padding-left: 30px;  

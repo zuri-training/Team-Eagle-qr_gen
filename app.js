@@ -15,7 +15,7 @@ app.use(express.static('public'));
 //app.use(express.static(path.join(__dirname, '/public')));
 app.set('views', './views');
 app.set("view engine", "ejs");
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(require("express-session")({
 	secret: "Rusty is a dog",
@@ -25,6 +25,7 @@ app.use(require("express-session")({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 
 passport.use(new LocalStrategy(User.authenticate()));
@@ -37,17 +38,29 @@ passport.deserializeUser(User.deserializeUser());
 
 // Showing home page
 app.get("/", function (req, res) {
-	res.render("index");
+	res.sendFile(__dirname + '/views/index.html');
+	//res.redirect("/index");
 });
 
 // Showing secret page
 app.get("/secret", isLoggedIn, function (req, res) {
-	res.render("secret");
+	res.sendFile(__dirname + '/views/secret.html');
+	//res.redirect("/secret");
+});
+// show the catalog page
+app.get("/catalog", function (req, res) {
+	res.sendFile(__dirname + '/views/catalog.html');
+	//res.redirect("/catalog");
+});
+app.post("/catalog", function (req, res) {
+	res.sendFile(__dirname + '/views/catalog.html');
+	//res.redirect("/catalog");
 });
 
 // Showing register form
 app.get("/register", function (req, res) {
-	res.render("createaccount");
+	res.sendFile(__dirname + '/views/createaccount.html');
+	//res.redirect("/createaccount");
 });
 
 // Handling user signup
@@ -59,19 +72,22 @@ app.post("/register", function (req, res) {
 		if (err) {
 			//console.log(err);
             alert(err);
-			return res.render("createaccount");
+			return res.sendFile(__dirname + '/views/createaccount.html');
+			//return res.redirect("/createaccount");
 		}
 
 		passport.authenticate("local")(
 			req, res, function () {
-			res.render("secret");
+			res.sendFile(__dirname + '/views/secret.html');
+			//res.redirect("/secret");
 		});
 	});
 });
 
 //Showing login form
 app.get("/login", function (req, res) {
-	res.render("login");
+	res.sendFile(__dirname + '/views/login.html');
+	//res.render("login");
 });
 
 //Handling user login

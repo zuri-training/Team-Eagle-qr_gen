@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/css/loginstyle.css">
+    <link rel="stylesheet" href="/css/style1.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="desktop-navigation flex">
+            <img src="images/images/Logo.png" alt="logo image">
+            <img class="hamburger" src="images/icons/hamburger.png" alt="menu button">
+            <nav class="desktop-nav">
+                <ul class="nav-links flex">
+                    <li class="nav-link"><a href="">English</a></li>
+                    <li class="nav-link"><a href="">FAQs</a></li>
+                    <li class="nav-link"><a href="">About us</a></li>
+                    <li class="sign-up nav-link"><a href="/register">Sign Up</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+        <nav class="mobile-nav">
+            <ul class="nav-links flex-col">
+                <div class="close flex">
+                    <img class="close-btn" src="images/icons/close.png" alt="close button">images/icons/close.png
+                    <p class="mobile-nav__heading">Menu</p>
+                </div>
+                <li class="">
+                    <a href="" class="flex">
+                        <div class="icon-text flex">
+                            <img src="images/icons/account.png" alt="go to account settings">
+                            <span>My Account</span>
+                        </div>
+                        <img src="images/icons/right-chevron.png" alt="">
+                    </a>
+                </li>
+                <li class="">
+                    <a href="" class="flex">
+                        <div class="icon-text flex">
+                            <img src="images/icons/dashboard.png" alt="go to dashboard">
+                            <span>Dashboard</span>
+                        </div>
+                        <img src="images/icons/right-chevron.png" alt="">
+                    </a>
+                </li>
+                <li class="">
+                    <a href="" class="flex">
+                        <div class="icon-text flex">
+                            <img src="images/icons/languages.png" alt="go to languages settings"
+                            <span>Languages</span>
+                    </div>
+                    <img src="images/icons/right-chevron.png" alt="">
+                </a>
+            </li>
+            <li class="">
+                <a href="" class="flex">
+                    <div class="icon-text flex">
+                        <img src="images/icons/contact-us.png" alt="go to contact us page">
+                        <span>Contact Us</span>
+                    </div>
+                    <img src="images/icons/right-chevron.png" alt="">
+                </a>
+            </li>
+            <li class="">
+                <a href="" class="flex">
+                    <div class="icon-text flex">
+                        <img src="images/icons/help.png" alt="search for help">
+                        <span>Help</span>
+                    </div>
+                    <img src="images/icons/right-chevron.png" alt="">
+                </a>
+            </li>
+            <li class="">
+                <a href="" class="flex">
+                    <div class="icon-text flex">
+                        <img src="images/icons/faq.png" alt="go to FAQs">
+                        <span>FAQs</span>
+                    </div>
+                    <img src="images/icons/right-chevron.png" alt="">
+                </a>
+            </li>
+            <li class="">
+                <a href="" class="flex">
+                    <div class="icon-text flex">
+                        <img src="images/icons/faq.png" alt="go to about us page">
+                        <span>About SmartQR</span>
+                    </div>
+                    <img src="images/icons/right-chevron.png" alt="">
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+    <form id="CatalogInformation" action="/catalog" method="post">
+        
+        <div >
+            <div class="float-child-element11">
+
+              <div class="red1 ">
+                <h1 id="Welcome">Catalog Information </h1>
+                
+                <p id="catal">Buisness Name</p>
+                <input class="input-field1 fii" type="name" id="name" name="Category" placeholder="Your Buisness Name" required>
+                <p id="catal">Category</p>
+                <section id="section1">
+                    <div>
+                        <p>
+                           Section 1 <i class=" fa fa-plus-square icon icon1" ></i>
+                            
+                        </p>
+                            
+                    </div>
+                    <p>
+                        Add Image
+                    </p>
+                    <input type="file" id="myFile" name="filename">
+                    <p id="catal">
+                        Description
+                    </p>
+                    <input class="input-field1 fii" type="text" id="Description" name="Description" placeholder="Enter the details of your product here" required > 
+                    <p id="catal">
+                        Price
+                    </p>
+                    <input class="input-field1 fii" type="text" id="Price" name="Price" placeholder="Enter the Price here" required >                    
+                </section>
+                <section id="section1">
+                    <p>
+                        Section 2 
+                        <button onclick="sectionfunc()" id="btn1">
+                            <i class=" fa fa-minus icon1" ></i>
+                        </button>
+                        <button id="btn1">
+                            <i class=" fa fa-plus  icon1" ></i>
+                        </button>
+                        <p>
+                            Add Image
+                        </p>
+                        <input type="file" id="myFile" name="filename">
+                        <p>
+                            Description
+                        </p>
+                        <input class="input-field1" type="text" id="Description" name="Description" placeholder="Enter the details of your product here" required > 
+                        <p>
+                            Price
+                        </p>
+                        <input class="input-field1" type="text" id="Price" name="Price" placeholder="Enter the Price here" required >
+                    </p>
+                    <p>
+                        Quantity
+                    </p>
+                    <input class="input-field1" type="text" id="Quantity" name="Quantity" placeholder="NGN 900.00" required >
+                </p>
+                    <div class="btn-group-vertical"> 
+                        <button type="button" id = "stbButton" >Save Information</button>
+                        <button type="button" id = "cdbButton"  >Generate QR Code</button>
+                 </div> 
+                </section>
+
+
+                <!-- <div  class="input-icons">
+                    
+                    <p id="form" class = "inputWithIcon">
+                        
+                        <i class="validation fa fa-envelope icon"></i>
+                    
+                        <input class="input-field" type="email" id="email" name="username" placeholder="Enter Email" required>
+                    </p>
+                    <p id="padd">Please include “@” in the email address</p>
+                    <p id="label">Enter Password</p>
+                    
+                    <p id="form" class = "inputWithIcon">
+                        <i class=" fa fa-lock icon" ></i>
+                        <input name="password" class="input-field" type="password" id="#id_password" placeholder="Password" required>
+                        <i class="fa fa-eye icon" onclick="myFunction()" id="togglePassword"></i>
+                    </p>
+                    <br>
+                    <p class="remember">
+                        <input class="remember2"  type="checkbox" onclick="myFunction()">Remember Me
+                    </p>
+                    <button type="submit" value="login" class=" button">Login</button>
+                    <p id="label">
+                        Forgot Password ?   <a href="forgotpassword.html">Click here</a>                      
+                    </p>
+                    <p id="label">
+                        Dont Have an account ? <a href="createaccount.ejx">Create an account</a>
+                    </p>
+                </div>
+                 -->
+              </div>
+            </div>
+            <!-- <div class="float-child-element2">
+                <img src="images/Rectangle1862.png" id="sed" alt="sedan">
+              
+            </div>
+          </div> -->
+
+    </form>
+    <div>
+
+    </div>
+    
+    <script>
+        const box = document.getElementById('section1');
+        // ✅ Clone node and its descendants
+        const clone = box.cloneNode(true);
+        // ✅ Change clone's id
+        clone.id = 'cloned-box';
+        function sectionfunc() {
+            // 👇️ Add clone to body
+            document.body.appendChild(clone);
+        }
+        
+    </script>
+    <footer class="text-center">
+        <div class="contact-us__container">
+            <div class="dark-bg-mobile"></div>
+            <div class="brand-bg"></div>
+            <div class="contact-card flex-col">
+                <h2>Talk with our customer representative today</h2>
+                <a href="" class="">Contact Us</a>
+            </div>
+        </div>
+        <div class="black-bg footer-top__container flex-col">
+            <img src="images/images/footer-Logo.png" alt="footer-logo" class="">
+            <div class="footer-links__container flex-col">
+                <div class="footer-links flex-col">
+                    <h3>Site maps</h3>
+                    <a href="" class="">Home</a>
+                    <a href="" class="">Products</a>
+                    <a href="" class="">Services</a>
+                </div>
+                <div class="footer-links flex-col">
+                    <h3 class="">Resources</h3>
+                    <a href="" class="">Designers</a>
+                    <a href="" class="">Bloggers</a>
+                    <a href="" class="">Developers</a>
+                </div>
+                <div class="footer-links flex-col">
+                    <h3 class="">Company</h3>
+                    <a href="" class="">About Us</a>
+                    <a href="" class="">Careers</a>
+                    <a href="" class="">FAQs</a>
+                    <a href="" class="">Teams</a>
+                    <a href="" class="">Contact Us</a>
+                </div>
+                <div class="social-links flex-col">
+                    <h3>Let's do it!</h3>
+                    <div class="socials flex">
+                        <img src="images/icons/footer-fb.png" alt="facebook icon" class="">
+                        <img src="images/icons/footer-bit.png" alt="bit icon" class="">
+                        <img src="images/icons/footer-github.png" alt="github icon" class="">
+                        <img src="images/icons/footer-message.png" alt="message icon" class="">
+                        <img src="images/icons/footer-instagram.png" alt="instagram icon"
+                            class="">
+                        <img src="images/icons/footer-figma.png" alt="figma icon" class="">
+                    </div>
+                </div>
+            </div>
+        </div><div class="footer-bottom__wrapper">
+            <div class="footer-bottom__container flex-col">
+                <div class="footer-bottom__r-side flex">
+                    <a href="" class="">Privacy Policy</a>
+                    <a href="" class="">Terms of Use</a>
+                    <a href="" class="">Sales and Refunds</a>
+                    <a href="" class="">Legal</a>
+                    <a href="" class="">Site Map</a>
+                </div>
+                <div class="footer-bottom__l-side">
+                    <p>&copy; 2022 All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+
+</html>
