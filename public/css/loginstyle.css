@@ -204,3 +204,30 @@ background: #FEFEFE;
   .fa-eye {
     margin-right: 20px;
   }
+  @media (max-width: 780px) {
+    .float-parent-element { 
+        width: 100%; 
+    } 
+    .float-child-element1 { 
+        display:flex;
+        justify-content: center; 
+        width: 70%; }
+    .float-child-element2 { 
+        display: flex;
+        justify-content: start; 
+        width: 223px; 
+        height: 180px
+    }
+    .float-child-element11 { 
+        display:flex;
+        justify-content: end;
+        width: 90%; 
+    }
+    .input-field1 {
+        width: 300px;
+        padding: 10px;
+        color: #777777;
+        margin: 0;
+        outline: none;
+    }
+}
