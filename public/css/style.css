@@ -667,6 +667,8 @@ footer {
 	.why-us__circles {
 		padding: 0;
 		gap: 1.5rem;
+		width: 80%;
+		margin: 0 auto;
 	}
 
 	.how-it-works__container {
