@@ -7,9 +7,9 @@ var express = require("express"),
 	User = require("./models/user");
 const connectDB = require("./db/dbconnect");
 
-var path = require("path");
+// var path = require("path");
 require("dotenv").config();
-const qr = require("qrcode");
+// const qr = require("qrcode");
 var app = express();
 app.use(express.static("public"));
 //app.use(express.static(path.join(__dirname, '/public')));
@@ -32,29 +32,29 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-const QRCode = require("qrcode");
+// const QRCode = require("qrcode");
 
-var opts = {
-	errorCorrectionLevel: "H",
-	type: "image/jpeg",
-	quality: 0.9,
-	margin: 1,
-	width: 250,
-	color: {
-		dark: "#000",
-		light: "#FFF",
-	},
-};
+// var opts = {
+// 	errorCorrectionLevel: "H",
+// 	type: "image/jpeg",
+// 	quality: 0.9,
+// 	margin: 1,
+// 	width: 250,
+// 	color: {
+// 		dark: "#000",
+// 		light: "#FFF",
+// 	},
+// };
 
-const generateQR = async (text) => {
-	QRCode.toDataURL(text, opts, (err, src) => {
-		let url = src;
-		return url;
-		if (err) {
-			console.log(err);
-		}
-	});
-};
+// const generateQR = async (text) => {
+// 	QRCode.toDataURL(text, opts, (err, src) => {
+// 		let url = src;
+// 		return url;
+// 		if (err) {
+// 			console.log(err);
+// 		}
+// 	});
+// };
 
 //=====================
 // ROUTES
@@ -139,14 +139,15 @@ function isLoggedIn(req, res, next) {
 // 	console.log("Server Has Started!");
 // });
 
-const start = async () => {
-	try {
-		await connectDB(process.env.DATABASE);
-		console.log("DB connected successfully");
-		app.listen(process.env.PORT, console.log(`Server is listening on port ${process.env.PORT}...`));
-	} catch (error) {
-		console.log(error);
-	}
-};
+// const start = async () => {
+// 	try {
+// 		await connectDB(process.env.DATABASE);
+// 		console.log("DB connected successfully");
+		
+// 	} catch (error) {
+// 		console.log(error);
+// 	}
+// };
 
-start();
+// start();
+app.listen(process.env.PORT, console.log(`Server is listening on port ${process.env.PORT}...`));
