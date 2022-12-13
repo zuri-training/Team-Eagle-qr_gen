@@ -17,13 +17,13 @@ app.use(express.static("public"));
 // app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.use(
-// 	require("express-session")({
-// 		secret: "Rusty is a dog",
-// 		resave: false,
-// 		saveUninitialized: false,
-// 	})
-// );
+app.use(
+	require("express-session")({
+		secret: "Rusty is a dog",
+		resave: false,
+		saveUninitialized: false,
+	})
+);
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -139,15 +139,14 @@ function isLoggedIn(req, res, next) {
 // 	console.log("Server Has Started!");
 // });
 
-// const start = async () => {
-// 	try {
-// 		await connectDB(process.env.DATABASE);
-// 		console.log("DB connected successfully");
-		
-// 	} catch (error) {
-// 		console.log(error);
-// 	}
-// };
+const start = async () => {
+	try {
+		await connectDB(process.env.DATABASE);
+		console.log("DB connected successfully");
+		app.listen(process.env.PORT, console.log(`Server is listening on port ${process.env.PORT}...`));
+	} catch (error) {
+		console.log(error);
+	}
+};
 
-// start();
-app.listen(process.env.PORT, console.log(`Server is listening on port ${process.env.PORT}...`));
+start();
