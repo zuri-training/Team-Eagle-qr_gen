@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="h&f.css">
-    <title>Document</title>
+   <link rel="stylesheet" href="/css/h&f.css">
+    <link rel="stylesheet" href="/css/webinfo.css" />
+    <title>SmartQR</title>
 </head>
 <body>
     <header>
@@ -14,10 +15,7 @@
                     <img class="hamburger" src="/assets/icons/hamburger.png" alt="menu button">
                     <nav class="desktop-nav">
                         <ul class="nav-links flex">
-                            <li class="nav-link"><a href="">English</a></li>
-                            <li class="nav-link"><a href="">FAQs</a></li>
-                            <li class="nav-link"><a href="">About us</a></li>
-                            <li class="sign-up nav-link"><a href="">Sign Up</a></li>
+                            <li class="sign-up nav-link"><a href="">Log Out</a></li>
                         </ul>
                     </nav>
                     
@@ -25,76 +23,113 @@
                 <nav class="mobile-nav">
                     <ul class="nav-links flex-col">
                         <div class="close flex">
-                            <img class="close-btn" src="/assets/icons/close.png" alt="close button">
+                            <img class="close-btn" src="../public/assets/icons/close.png" alt="close button">
                             <p class="mobile-nav__heading">Menu</p>
                         </div>
                         <li class="">
                             <a href="" class="flex">
                                 <div class="icon-text flex">
-                                    <img src="/assets/icons/account.png" alt="go to account settings">
+                                    <img src="../public/assets/icons/account.png" alt="go to account settings">
                                     <span>My Account</span>
                                 </div>
-                                <img src="/assets/icons/right-chevron.png" alt="">
+                                <img src="../public/assets/icons/right-chevron.png" alt="">
                             </a>
                         </li>
                         <li class="">
                             <a href="" class="flex">
                                 <div class="icon-text flex">
-                                    <img src="/assets/icons/dashboard.png" alt="go to dashboard">
+                                    <img src="../public/assets/icons/dashboard.png" alt="go to dashboard">
                                     <span>Dashboard</span>
                                 </div>
-                                <img src="/assets/icons/right-chevron.png" alt="">
+                                <img src="../public/assets/icons/right-chevron.png" alt="">
                             </a>
                         </li>
                         <li class="">
                             <a href="" class="flex">
                                 <div class="icon-text flex">
-                                    <img src="/assets/icons/languages.png" alt="go to languages settings"
+                                    <img src="../public/assets/icons/languages.png" alt="go to languages settings"
                                     <span>Languages</span>
                             </div>
-                            <img src="/assets/icons/right-chevron.png" alt="">
+                            <img src="../public/assets/icons/right-chevron.png" alt="">
                         </a>
                     </li>
                     <li class="">
                         <a href="" class="flex">
                             <div class="icon-text flex">
-                                <img src="/assets/icons/contact-us.png" alt="go to contact us page">
+                                <img src="../public/assets/icons/contact-us.png" alt="go to contact us page">
                                 <span>Contact Us</span>
                             </div>
-                            <img src="/assets/icons/right-chevron.png" alt="">
+                            <img src="../public/assets/icons/right-chevron.png" alt="">
                         </a>
                     </li>
                     <li class="">
                         <a href="" class="flex">
                             <div class="icon-text flex">
-                                <img src="/assets/icons/help.png" alt="search for help">
+                                <img src="../public/assets/icons/help.png" alt="search for help">
                                 <span>Help</span>
                             </div>
-                            <img src="/assets/icons/right-chevron.png" alt="">
+                            <img src="../public/assets/icons/right-chevron.png" alt="">
                         </a>
                     </li>
                     <li class="">
                         <a href="" class="flex">
                             <div class="icon-text flex">
-                                <img src="/assets/icons/faq.png" alt="go to FAQs">
+                                <img src="../public/assets/icons/faq.png" alt="go to FAQs">
                                 <span>FAQs</span>
                             </div>
-                            <img src="/assets/icons/right-chevron.png" alt="">
+                            <img src="../public/assets/icons/right-chevron.png" alt="">
                         </a>
                     </li>
                     <li class="">
                         <a href="" class="flex">
                             <div class="icon-text flex">
-                                <img src="/assets/icons/faq.png" alt="go to about us page">
+                                <img src="../public/assets/icons/faq.png" alt="go to about us page">
                                 <span>About SmartQR</span>
                             </div>
-                            <img src="/assets/icons/right-chevron.png" alt="">
+                            <img src="../public/assets/icons/right-chevron.png" alt="">
                         </a>
                     </li>
                 </ul>
             </nav>
     </header>
+    <!-- Header ends here -->
+<!-- Input form starts here -->
 
+
+
+<div class="container">
+    <div class="headings">
+        <h2 class="webinfo">Website Information</h3> <br>
+    <p>Complete the form below to generate a QR Code for your website</p>
+    </div>
+    <div>
+        <form action="submit">
+            <div class="input-field">
+                <label for="">Business name</label> <br>
+                <input type="text" placeholder="Enter your business name">
+            </div>
+            <div class="input-field">
+                <label for="">Website URL</label> <br>
+                <input type="text" placeholder="Enter your website url">
+            </div>
+            <div class="input-field">
+                <label for="">Social Media</label> <br>
+                <input type="text" placeholder="Enter your social media">
+            </div>
+            
+            <div class="buttons">
+                <button class="save">Save Information</button>
+                <button class="generate">Generate QR Code  <span><img class="arrow-right-alt-24px-icon1" alt="" src="/public/assets/icons/arrow_right_white.png" /></span>
+            </button>
+            </div>
+            
+        </form>
+    </div>
+    
+</div>
+    <!-- Our input form ends here -->
+
+    <!-- Footer stats here -->
     <footer class="text-center">
                     <div class="contact-us__container">
                         <div class="dark-bg-mobile"></div>

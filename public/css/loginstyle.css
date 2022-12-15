@@ -23,16 +23,19 @@
     background-color: #F5F5F5;
   }
 
+
   .float-parent-element { 
     width: 100%; 
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
 } 
 .float-child-element1 { 
-    float: left; 
-    width: 50%; 
+     
 }
 .float-child-element2 { 
-    float: right; 
-    width: 50%; 
+   
 }
 .mein { 
      
