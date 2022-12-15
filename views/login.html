@@ -6,65 +6,201 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="index.js"></script>
-        <script src="server1.js"></script>
-        <link rel="stylesheet" href="/css/loginstyle.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="/css/h&f.css">
+        <link rel="stylesheet" href="/css/auth.css">
         <title>Login Page</title>
 
     </head>
     <body>
+        <header>
+            <div class="desktop-navigation flex">
+                <img src="/assets/images/Logo.png" alt="logo image">
+                <img class="hamburger" src="/assets/icons/hamburger.png" alt="menu button">
+                <nav class="desktop-nav">
+                    <ul class="nav-links flex">
+                        <li class="nav-link"><a href="">English</a></li>
+                        <li class="nav-link"><a href="">FAQs</a></li>
+                        <li class="nav-link"><a href="">About us</a></li>
+                        <li class="sign-up nav-link"><a href="">Sign Up</a></li>
+                    </ul>
+                </nav>
 
-
-        <form id="Main-Containerv" action="/login" method="post">
-
-            <div class="float-parent-element">
-                <div class="float-child-element1">
-
-                    <div class="red ">
-                        <h1 id="Welcome">Welcome Back,</h1>
-                        <h3>Login to your account</h3>
-                        <p id="label">Email</p>
-                        <div class="input-icons">
-
-                            <p id="form" class="inputWithIcon">
-
-                                <i class="validation fa fa-envelope icon"></i>
-
-                                <input class="input-field" type="email" id="email" name="username" placeholder="Enter
-                                    Email" required>
-                            </p>
-                            <p id="padd">Please include “@” in the email address</p>
-                            <p id="label">Enter Password</p>
-
-                            <p id="form" class="inputWithIcon">
-                                <i class=" fa fa-lock icon"></i>
-                                <input name="password" class="input-field" type="password" id="#id_password"
-                                    placeholder="Password" required>
-                                <i class="fa fa-eye icon" onclick="myFunction()" id="togglePassword"></i>
-                            </p>
-                            <br>
-                            <p class="remember">
-                                <input class="remember2" type="checkbox" onclick="myFunction()">Remember Me
-                            </p>
-                            <button type="submit" value="login" class=" button">Login</button>
-                            <p id="label">
-                                Forgot Password ? <a href="forgotpassword.html">Click here</a>
-                            </p>
-                            <p id="label">
-                                Don''t Have an account ? <a href="/register">Create an account</a>
-                            </p>
+            </div>
+            <nav class="mobile-nav">
+                <ul class="nav-links flex-col">
+                    <div class="close flex">
+                        <img class="close-btn" src="/assets/icons/close.png" alt="close button">
+                        <p class="mobile-nav__heading">Menu</p>
+                    </div>
+                    <li class="">
+                        <a href="" class="flex">
+                            <div class="icon-text flex">
+                                <img src="/assets/icons/account.png" alt="go to account settings">
+                                <span>My Account</span>
+                            </div>
+                            <img src="/assets/icons/right-chevron.png" alt="">
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="" class="flex">
+                            <div class="icon-text flex">
+                                <img src="/assets/icons/dashboard.png" alt="go to dashboard">
+                                <span>Dashboard</span>
+                            </div>
+                            <img src="/assets/icons/right-chevron.png" alt="">
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="" class="flex">
+                            <div class="icon-text flex">
+                                <img src="/assets/icons/languages.png" alt="go to languages settings"
+                                <span>Languages</span>
                         </div>
-
+                        <img src="/assets/icons/right-chevron.png" alt="">
+                    </a>
+                </li>
+                <li class="">
+                    <a href="" class="flex">
+                        <div class="icon-text flex">
+                            <img src="/assets/icons/contact-us.png" alt="go to contact us page">
+                            <span>Contact Us</span>
+                        </div>
+                        <img src="/assets/icons/right-chevron.png" alt="">
+                    </a>
+                </li>
+                <li class="">
+                    <a href="" class="flex">
+                        <div class="icon-text flex">
+                            <img src="/assets/icons/help.png" alt="search for help">
+                            <span>Help</span>
+                        </div>
+                        <img src="/assets/icons/right-chevron.png" alt="">
+                    </a>
+                </li>
+                <li class="">
+                    <a href="" class="flex">
+                        <div class="icon-text flex">
+                            <img src="/assets/icons/faq.png" alt="go to FAQs">
+                            <span>FAQs</span>
+                        </div>
+                        <img src="/assets/icons/right-chevron.png" alt="">
+                    </a>
+                </li>
+                <li class="">
+                    <a href="" class="flex">
+                        <div class="icon-text flex">
+                            <img src="/assets/icons/faq.png" alt="go to about us page">
+                            <span>About SmartQR</span>
+                        </div>
+                        <img src="/assets/icons/right-chevron.png" alt="">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container w-80 flex">
+        <div class="l-side flex-col">
+            <div class="l-side__text-content">
+                <h1 id="Welcome">Welcome Back,</h1>
+                <h3>Login to your account</h3>
+            </div>
+            <form action="/login" method="post" class="flex-col">
+                <div class="form-group flex-col">
+                    <label for="email">Email</label>
+                    <div class="form-input flex">
+                        <i class="validation fa fa-envelope icon"></i>
+                        <input class="input-field" type="email" id="email" name="username" placeholder="Enter Email"
+                            required>
+                    </div>
+                    <p id="padd">Please include “@” in the email address</p>
+                </div>
+                <div class="form-group flex-col">
+                    <label for="password">Password</label>
+                    <div class="form-input flex password">
+                        <i class=" fa fa-lock icon"></i>
+                        <input name="password" class="input-field" type="password" id="password"
+                            placeholder="Password" required>
+                        <div class="" id="togglePassword" onclick="myFunction()"><i class="fa fa-eye icon"></i></div>
                     </div>
                 </div>
-                <div class="float-child-element2">
-                    <img src="/images/Rectangle1862.png" id="sed" alt="sedan">
 
+                <div class="remember flex"><input class="" type="checkbox"><span>Remember Me</span></div>
+                <button type="submit" class="login-btn">Login</button>
+                <div class="form-redirect flex-col">
+                    <p id="label"> Forgot Password? <span class="dummy">Click here</span></p>
+                    <p id="label">Don't Have an account? <a href="/register">Create an account</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="r-side flex">
+            <img src="/images/Rectangle1862.png" id="sed" alt="sedan">
+        </div>
+    </div>
+
+        <footer class="text-center">
+            <div class="contact-us__container">
+                <div class="dark-bg-mobile"></div>
+                <div class="brand-bg"></div>
+                <div class="contact-card flex-col">
+                    <h2>Talk with our customer representative today</h2>
+                    <a href="" class="">Contact Us</a>
                 </div>
             </div>
-
-        </form>
-
-
+            <div class="black-bg footer-top__container flex-col">
+                <img src="/assets/images/footer-Logo.png" alt="footer-logo" class="">
+                <div class="footer-links__container flex-col">
+                    <div class="footer-links flex-col">
+                        <h3>Site maps</h3>
+                        <a href="" class="">Home</a>
+                        <a href="" class="">Products</a>
+                        <a href="" class="">Services</a>
+                    </div>
+                    <div class="footer-links flex-col">
+                        <h3 class="">Resources</h3>
+                        <a href="" class="">Designers</a>
+                        <a href="" class="">Bloggers</a>
+                        <a href="" class="">Developers</a>
+                    </div>
+                    <div class="footer-links flex-col">
+                        <h3 class="">Company</h3>
+                        <a href="" class="">About Us</a>
+                        <a href="" class="">Careers</a>
+                        <a href="" class="">FAQs</a>
+                        <a href="" class="">Teams</a>
+                        <a href="" class="">Contact Us</a>
+                    </div>
+                    <div class="social-links flex-col">
+                        <h3>Let's do it!</h3>
+                        <div class="socials flex">
+                            <img src="/assets/icons/footer-fb.png" alt="facebook icon" class="">
+                            <img src="/assets/icons/footer-bit.png" alt="bit icon" class="">
+                            <img src="/assets/icons/footer-github.png" alt="github icon" class="">
+                            <img src="/assets/icons/footer-message.png" alt="message icon" class="">
+                            <img src="/assets/icons/footer-instagram.png" alt="instagram icon"
+                                class="">
+                            <img src="/assets/icons/footer-figma.png" alt="figma icon" class="">
+                        </div>
+                    </div>
+                </div>
+            </div><div class="footer-bottom__wrapper">
+                <div class="footer-bottom__container flex-col">
+                    <div class="footer-bottom__r-side flex">
+                        <a href="" class="">Privacy Policy</a>
+                        <a href="" class="">Terms of Use</a>
+                        <a href="" class="">Sales and Refunds</a>
+                        <a href="" class="">Legal</a>
+                        <a href="" class="">Site Map</a>
+                    </div>
+                    <div class="footer-bottom__l-side">
+                        <p>&copy; 2022 All Rights Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="/scripts/script.js"></script>
     </body>
 </html>

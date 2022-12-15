@@ -29,11 +29,11 @@ a {
 	text-decoration: none;
 }
 
-::active {
+:active {
 	color: var(--brand-deep);
 }
 
-::focus {
+:focus {
 	outline: none;
 }
 
@@ -147,7 +147,7 @@ li a img {
 }
 
 .contact-card h2 {
-	font-size: 2rem !important;
+	font-size: 2rem;
 }
 
 .contact-card a {
@@ -232,6 +232,10 @@ footer {
 		justify-content: end;
 	}
 
+	ul {
+		gap: 1.5rem;
+	}
+
 	.hamburger {
 		display: none;
 	}
@@ -253,7 +257,7 @@ footer {
 
 	.contact-card {
 		width: 70%;
-		flex-direction: row;
+		flex-direction: row !important;
 		justify-content: space-between;
 		text-align: left !important;
 		top: 50%;
@@ -261,7 +265,7 @@ footer {
 	}
 
 	.contact-card h2 {
-		font-size: 1.7rem;
+		font-size: 1.5rem;
 	}
 
 	.contact-card a {
@@ -310,7 +314,7 @@ footer {
 
 @media (min-width: 1024px) {
 	.desktop-nav {
-		width: 40%;
+		width: 45%;
 	}
 
 	.desktop-navigation {
@@ -358,7 +362,6 @@ footer {
 	.contact-card {
 		width: 50%;
 		padding: 2.7rem;
-		font-size: 2.35rem;
 	}
 	.contact-card h2 {
 		width: 50%;
@@ -389,3 +392,4 @@ footer {
 		margin: 0 auto;
 	}
 }
+

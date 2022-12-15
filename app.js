@@ -80,7 +80,7 @@ app.get("/user/generate-catalog", function (req, res) {
 	res.sendFile("./views/catalog.html", { root: __dirname });
 });
 app.get("/user/generate-link", function (req, res) {
-	res.sendFile("./views/website.html", { root: __dirname });
+	res.sendFile("./views/webinfo.html", { root: __dirname });
 });
 
 // Handling user signup
