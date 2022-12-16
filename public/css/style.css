@@ -145,7 +145,7 @@ li a img {
 .hero-section__circle-text {
 	line-height: 1.5;
 	padding: 1rem;
-	background-image: url(../assets/icons/blue-circle.png);
+	background-image: url(.../public/assets/icons/blue-circle.png);
 	background-position: bottom;
 	background-repeat: no-repeat;
 	background-size: 100%;
@@ -194,7 +194,7 @@ li a img {
 .why-us__container {
 	text-align: center;
 	padding: 6em 0;
-	background-image: url(../assets/icons/blue-eclipse.png), url(../assets/icons/yellow-eclipse.png);
+	background-image: url(.../public/assets/icons/blue-eclipse.png), url(.../public/assets/icons/yellow-eclipse.png);
 	background-position: right top, left 90%;
 	background-repeat: no-repeat, no-repeat;
 	background-size: 30%, 55%;
@@ -212,7 +212,7 @@ li a img {
 .why-us__colored-text {
 	color: var(--orange);
 	padding: 1.2rem 1rem;
-	background-image: url(../assets/icons/orange-circle.png);
+	background-image: url(.../public/assets/icons/orange-circle.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 100%;
@@ -674,7 +674,8 @@ footer {
 	.how-it-works__container {
 		width: 80%;
 		padding: 7rem 0;
-		background-image: url(../assets/images/secondary-eclipse.png), url(../assets/images/yello-eclipse-bg.png);
+		background-image: url(.../public/assets/images/secondary-eclipse.png),
+			url(.../public/assets/images/yello-eclipse-bg.png);
 		background-position: center top, center bottom;
 		background-repeat: no-repeat, no-repeat;
 		background-size: 100%, 100%;
