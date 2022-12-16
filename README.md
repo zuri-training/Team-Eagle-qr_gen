@@ -16,6 +16,7 @@
 ## Project Name
 SMART QR
 
+## Live link - <https://qrgen-jo6h.onrender.com/>
 
 * __The repository file will be arranged in the following order
 
