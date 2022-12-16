@@ -8,10 +8,14 @@ const productRouter = require("./routes/productRoutes");
 const businessCardRouter = require("./routes/businessCardRoutes");
 const qrRouter = require("./routes/qrRoutes");
 const cookies = require("cookie-parser");
+const connectDB = require("./db/dbconnect");
+require("dotenv").config();
 
 const app = express();
 app.use(cors());
 app.use(cookies());
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Body parser, reading data from body into req.body
 app.use(
@@ -50,4 +54,16 @@ app.all("/*", (req, res, next) => {
 	res.sendFile(path.join(`${__dirname}/views/index.html`));
 });
 
-module.exports = app;
+const start = async () => {
+	try {
+		await connectDB(process.env.DATABASE);
+		console.log("DB connected successfully");
+		app.listen(process.env.PORT, console.log(`Server is listening on port ${process.env.PORT}...`));
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+start();
+
+// module.exports = app;
