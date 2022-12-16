@@ -22,3 +22,13 @@ const createBusinessCard = async (event) => {
 		image.src = response.data.imageUrl;
 	}
 };
+
+let card = document.querySelector(".box"),
+	image = document.querySelector("#qrImg"),
+	buttons = document.querySelector(".buttons");
+
+function showDiv() {
+	card.style.display = "none";
+	image.style.display = "block";
+	buttons.style.display = "flex";
+}

@@ -108,12 +108,18 @@
       </nav>
     </header>
     <main>
-      
       <div class="wrapper flex-col w-90">
-        
         <div class="overlay">
-          <div id="overlaySpan" class="flex">QR code Here</div>
-          <img src="" alt="" id="qrImg">
+          <div id="overlaySpan" class="box flex">QR code Here</div>
+          <img src="/assets/images/qr.png" alt="" id="qrImg">
+          <div class="buttons flex-col">
+            <p class="generate-qr" id="downloadBtn">Download</p>
+            <select name="social" id="" class="">
+              <option value="Facebook" selected="selected">Facebook</option>
+              <option value="Twitter" selected="selected">Twitter</option>
+              <option value="Instagram" selected="selected">Instagram</option>
+            </select>
+          </div>
         </div>
         <div class="container w-80">
           <div class="header flex-col">
@@ -148,7 +154,7 @@
               </div>
               <div class="form-submit flex-col">
                 <button type="submit" class="save-qr text-center">Save Information</button>
-                <button type="submit" class="generate-qr flex"><span>Generate QR Code</span> <img src="/assets/icons/arrow_right_white.png" alt=""></button>
+                <p class="generate-qr flex" onclick="showDiv()"><span>Generate QR Code</span> <img src="/assets/icons/arrow_right_white.png" alt=""></p>
               </div>
           </form>
         </div>

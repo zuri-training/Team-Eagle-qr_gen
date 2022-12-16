@@ -23,21 +23,34 @@
 #qrImg {
 	width: 100%;
 	aspect-ratio: 1;
-	display: none;
 }
 
 .overlay {
 	border-radius: 5px;
 }
 
-.overlay div {
+.box {
 	border: 1px solid black;
 	width: 80%;
 	height: 200px;
 	margin: 0 auto;
 	color: black;
 	font-weight: 600;
-	background-color: white;
+	margin-bottom: 1.5rem;
+}
+
+.buttons {
+	gap: 1rem;
+	display: none;
+}
+
+.buttons,
+#qrImg {
+	display: none;
+}
+
+select {
+	padding: 0.4rem;
 }
 
 button {
@@ -106,6 +119,13 @@ input {
 
 	.overlay {
 		width: 40%;
+	}
+
+	.buttons {
+		width: 80%;
+		margin: 0 auto;
+		flex-direction: row !important;
+		justify-content: space-between;
 	}
 
 	.subheading {
