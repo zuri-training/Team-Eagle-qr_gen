@@ -11,8 +11,20 @@
             rel="stylesheet">
             <link rel="stylesheet" href="/css/h&f.css" />
     <link rel="stylesheet" href="/css/business.css" />
+    <link rel="stylesheet" href="/css/spinner.css" />
+    <script src="/scripts/businessCard.js" defer></script>
+    <script src="/scripts/protect.js" defer></script>
   </head>
   <body>
+    <div class="loading" id="loading">
+        <div class="spinner">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+        </div>
+      </div>
     <header>
       <div class="desktop-navigation flex">
         <img src="/assets/images/Logo.png" alt="logo image">
@@ -96,43 +108,50 @@
       </nav>
     </header>
     <main>
-      <div class="container w-80">
-        <div class="header flex-col">
-          <h2 class="heading">Business card information</h2>
-          <p class="subheading">Complete the form below to generate
-            a QR Code for your business card</p>
+      
+      <div class="wrapper flex-col w-90">
+        
+        <div class="overlay">
+          <div id="overlaySpan" class="flex">QR code Here</div>
+          <img src="" alt="" id="qrImg">
         </div>
-        <form action="" class="flex-col">
-          <div class="form-group flex-col flex-col">
-            <label for="firstName">First name</label>
-            <input type="text" placeholder="Enter first name">
+        <div class="container w-80">
+          <div class="header flex-col">
+            <h2 class="heading">Business card information</h2>
+            <p class="subheading">Complete the form below to generate
+              a QR Code for your business card</p>
           </div>
-          <div class="form-group flex-col">
-            <label for="surname">Surname</label>
-            <input type="text" placeholder="Enter surname">
-          </div>
-          <div class="form-group flex-col">
-            <label for="phone">Phone number</label>
-            <input type="tel" placeholder="Enter mobile number">
-          </div>
-          <div class="form-group flex-col">
-            <label for="email">Email address</label>
-            <input type="email" placeholder="Enter your email">
+          <form class="flex-col" onsubmit="createBusinessCard(event)">
+            <div class="form-group flex-col">
+              <label for="firstName">First name</label>
+              <input name="firstName" type="text" placeholder="Enter first name">
             </div>
-          <div class="form-group flex-col">
-            <label for="website">Website</label>
-            <input type="text" placeholder="Enter website link">
+            <div class="form-group flex-col">
+              <label for="surname">Surname</label>
+              <input name="surname" type="text" placeholder="Enter surname">
             </div>
-          <div class="form-group flex-col">
-            <label for="company">Company</label>
-            <input type="text" placeholder="Enter company name">
-            </div> 
-
-            <div class="form-submit flex-col">
-              <a href="" class="save-qr text-center">Save Information</a>
-              <a href="" class="generate-qr flex"><span>Generate QR Code</span> <img src="/assets/icons/arrow_right_white.png" alt=""></a>
+            <div class="form-group flex-col">
+              <label for="phone">Phone number</label>
+              <input name="phoneNumber" type="tel" placeholder="Enter mobile number">
             </div>
-        </form>
+            <div class="form-group flex-col">
+              <label for="email">Email address</label>
+              <input name="email" type="email" placeholder="Enter your email">
+              </div>
+            <div class="form-group flex-col">
+              <label for="website">Website</label>
+              <input name="website" type="text" placeholder="Enter website link">
+              </div>
+            <div class="form-group flex-col">
+              <label for="company">Company</label>
+              <input name="companyName" type="text" placeholder="Enter company name">
+              </div>
+              <div class="form-submit flex-col">
+                <button type="submit" class="save-qr text-center">Save Information</button>
+                <button type="submit" class="generate-qr flex"><span>Generate QR Code</span> <img src="/assets/icons/arrow_right_white.png" alt=""></button>
+              </div>
+          </form>
+        </div>
       </div>
     </main>
     <footer class="text-center">

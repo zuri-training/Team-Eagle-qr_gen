@@ -1,6 +1,6 @@
 const qr = require("qrcode");
 const cloudinary = require("cloudinary");
-const QrCode = require("../schema/QrCodeModel");
+const QrCode = require("../models/QrCodeModel");
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,

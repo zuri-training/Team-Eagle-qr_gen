@@ -11,15 +11,26 @@
             rel="stylesheet">
     <link rel="stylesheet" href="/css/catalog.css" />
     <link rel="stylesheet" href="/css/h&f.css" />
+        <link rel="stylesheet" href="/css/spinner.css" />
+
   </head>
   <body>
+      <div class="loading" id="loading">
+      <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+      </div>
+    </div>
     <header>
       <div class="desktop-navigation flex">
         <img src="/assets/images/Logo.png" alt="logo image">
         <img class="hamburger" src="/assets/icons/hamburger.png" alt="menu button">
         <nav class="desktop-nav">
           <ul class="nav-links flex">
-            <li class="sign-up nav-link"><a href="/login">Log out</a></li>
+            <li class="sign-up nav-link" onclick="logout()"><a href="#">Log out</a></li>
           </ul>
         </nav>
 
@@ -96,43 +107,48 @@
       </nav>
     </header>
     <main>
-      <div class="container w-80">
-        <div class="header flex-col">
-          <h2 class="heading">Catalogue Information</h2>
-          
+      <div class="wrapper flex-col w-90">
+        <div class="overlay">
+          <div id="overlaySpan" class="flex">QR code Here</div>
+          <img src="" alt="" id="qrImg">
         </div>
-        <form action="" class="flex-col">
-          <div class="form-group flex-col flex-col">
-            <label for="businessName">Business name</label>
-            <input type="text" placeholder="Enter business name">
+        <div class="container w-80">
+          <div class="header flex-col">
+            <h2 class="heading">Catalogue Information</h2>
+        
           </div>
-          <div class="form-group flex">
-            <label class="flex" for="businessName">Add product</label>
-            <button><img src="/assets/icons/add-icon.png" width="27px" alt=""></button>
-          
-          </div>
-          <div class="form-group flex-col">
-            <label for="image">Upload image</label>
-            <input
-        type="file"
-        accept="image/png, image/jpeg, image/webp"
-        name="productImage"
-      />
-          </div>
-          <div class="form-group flex-col">
-            <label for="description">Description</label>
-            <input type="email" placeholder="">
+          <form action="" class="flex-col">
+            <div class="form-group flex-col flex-col">
+              <label for="businessName">Business name</label>
+              <input type="text" placeholder="Enter business name">
             </div>
-          <div class="form-group flex-col">
-            <label for="price">Price</label>
-            <input type="number">
+            <div class="form-group flex">
+              <label class="flex" for="businessName">Add product</label>
+              <button><img src="/assets/icons/add-icon.png" width="27px" alt=""></button>
+        
             </div>
-
-            <div class="form-submit flex-col">
-              <a href="" class="save-qr">Save Information</a>
-              <a href="" class="generate-qr flex"><span>Generate QR Code</span> <img src="/assets/icons/arrow_right_white.png" alt=""></a>
+            <div class="form-group flex-col">
+              <label for="image">Upload image</label>
+              <input
+          type="file"
+          accept="image/png, image/jpeg, image/webp"
+          name="productImage"
+        />
             </div>
-        </form>
+            <div class="form-group flex-col">
+              <label for="description">Description</label>
+              <input type="email" placeholder="">
+              </div>
+            <div class="form-group flex-col">
+              <label for="price">Price</label>
+              <input type="number">
+              </div>
+              <div class="form-submit flex-col">
+                <button type="submit" class="save-qr text-center">Save Information</button>
+                  <button type="submit" class="generate-qr flex"><span>Generate QR Code</span> <img src="/assets/icons/arrow_right_white.png" alt=""></button>
+              </div>
+          </form>
+        </div>
       </div>
     </main>
     <footer class="text-center">
@@ -195,6 +211,7 @@
         </div>
       </div>
     </footer>
+        <script src="/scripts/protect.js"></script>
   </body>
 </html>
   </body>

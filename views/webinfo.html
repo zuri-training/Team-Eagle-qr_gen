@@ -97,35 +97,33 @@
 
 
 
-<div class="container">
-    <div class="headings">
-        <h2 class="webinfo">Website Information</h3> <br>
-    <p>Complete the form below to generate a QR Code for your website</p>
+<div class="wrapper flex-col w-90">
+    <div class="overlay">
+      <div id="overlaySpan" class="flex">QR code Here</div>
+      <img src="" alt="" id="qrImg">
     </div>
-    <div>
-        <form action="submit">
-            <div class="input-field">
-                <label for="">Business name</label> <br>
-                <input type="text" placeholder="Enter your business name">
-            </div>
-            <div class="input-field">
-                <label for="">Website URL</label> <br>
-                <input type="text" placeholder="Enter your website url">
-            </div>
-            <div class="input-field">
-                <label for="">Social Media</label> <br>
-                <input type="text" placeholder="Enter your social media">
-            </div>
-            
-            <div class="buttons">
-                <button class="save">Save Information</button>
-                <button class="generate">Generate QR Code  <span><img class="arrow-right-alt-24px-icon1" alt="" src="/public/assets/icons/arrow_right_white.png" /></span>
-            </button>
-            </div>
-            
-        </form>
-    </div>
+    <div class="container">
+        <div class="header flex-col">
+            <h2 class="heading">Website Information</h3> <br>
+            <p class="subheading">Complete the form below to generate a QR Code for your website</p>
+        </div>
+        <div>
+            <form class="flex-col">
+                <div class="form-group flex-col">
+                    <label for="website">Website URL</label>
+                    <input name="website" type="text" placeholder="Enter your website url">
+                </div>
     
+                <div class="form-submit flex-col">
+                    <button type="submit" class="save-qr text-center">Save Information</button>
+                    <button type="submit" class="generate-qr flex"><span>Generate QR Code</span> <img src="/assets/icons/arrow_right_white.png" alt=""></button>
+                  </div>
+                </div>
+    
+            </form>
+        </div>
+    
+    </div>
 </div>
     <!-- Our input form ends here -->
 
