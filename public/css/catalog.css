@@ -15,12 +15,49 @@
 	margin-bottom: 3rem;
 }
 
+.wrapper {
+	flex-direction: column-reverse !important;
+	justify-content: space-between;
+}
+
+#qrImg {
+	width: 100%;
+	aspect-ratio: 1;
+}
+
+.overlay {
+	border-radius: 5px;
+}
+
+.box {
+	border: 1px solid black;
+	width: 80%;
+	height: 200px;
+	margin: 0 auto;
+	color: black;
+	font-weight: 600;
+	margin-bottom: 1.5rem;
+}
+
+.buttons {
+	gap: 1rem;
+	display: none;
+}
+
+.buttons,
+#qrImg {
+	display: none;
+}
+
+select {
+	padding: 0.4rem;
+}
+
 button {
 	border: none;
 }
 
 form {
-	width: 90%;
 	margin: 0 auto;
 	gap: 1rem;
 }
@@ -70,16 +107,30 @@ input {
 }
 
 @media (min-width: 768px) {
-	.header {
-		width: 55%;
+	.wrapper {
+		flex-direction: row-reverse !important;
+		width: 70% !important;
+		gap: 2rem;
+	}
+
+	.container {
+		width: 60%;
+	}
+
+	.overlay {
+		width: 40%;
+		translate: 0 12%;
+	}
+
+	.buttons {
+		width: 80%;
+		margin: 0 auto;
+		flex-direction: row !important;
+		justify-content: space-between;
 	}
 
 	.subheading {
 		margin-bottom: 3rem;
-	}
-
-	form {
-		width: 55%;
 	}
 
 	.form-submit {
@@ -95,12 +146,11 @@ input {
 }
 
 @media (min-width: 1024px) {
-	.header {
-		width: 40%;
+	.wrapper {
+		width: 60%;
 	}
 
-	form {
-		width: 40%;
+	.overlay {
+		width: 30%;
 	}
 }
-

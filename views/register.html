@@ -8,6 +8,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,7 +21,7 @@
     <link rel="stylesheet" href="/css/h&f.css" />
     <link rel="stylesheet" href="/css/auth.css" />
     <link rel="stylesheet" href="/css/spinner.css" />
-    <title>Login Page</title>
+    <title>Sign up</title>
   </head>
   <body>
     <div class="loading" id="loading">
@@ -42,7 +46,7 @@
             <li class="nav-link"><a href="">English</a></li>
             <li class="nav-link"><a href="">FAQs</a></li>
             <li class="nav-link"><a href="">About us</a></li>
-            <li class="sign-up nav-link"><a href="/register">Sign Up</a></li>
+            <li class="sign-up nav-link"><a href="">Sign Up</a></li>
           </ul>
         </nav>
       </div>
@@ -132,63 +136,89 @@
       </nav>
     </header>
     <div class="container w-80 flex">
-      <div class="l-side flex-col">
+      <div class="flex-col l-side">
         <div class="l-side__text-content">
-          <h1 id="Welcome">Welcome Back,</h1>
-          <h3>Login to your account</h3>
+          <h1 id="Welcome">Create your account</h1>
+          <h3>Enter your information to create your SmartQR account</h3>
         </div>
-        <form onsubmit="handleSubmit(event)" class="flex-col">
+        <form class="flex-col" onsubmit="handleSubmit(event)">
           <div class="form-group flex-col">
-            <label for="email">Email</label>
-            <div class="form-input flex">
+            <label for="">Name</label>
+            <input
+              class="input-field"
+              type="text"
+              name="name"
+              placeholder="Enter your Name here"
+              required
+            />
+          </div>
+          <div class="form-group flex-col">
+            <label for="">Email</label>
+            <div id="form" class="form-input flex">
               <i class="validation fa fa-envelope icon"></i>
               <input
                 class="input-field"
                 type="email"
                 name="email"
-                placeholder="Enter Email"
+                placeholder="Enter your Email address"
                 required
               />
             </div>
             <p id="padd">Please include “@” in the email address</p>
           </div>
           <div class="form-group flex-col">
-            <label for="password">Password</label>
-            <div class="form-input flex password">
+            <label for="">Enter Password</label>
+            <div id="form" class="form-input flex password">
               <i class="fa fa-lock icon"></i>
               <input
-                name="password"
                 class="input-field"
+                name="password"
                 type="password"
                 placeholder="Password"
                 required
               />
-              <div class="" id="togglePassword" onclick="myFunction()">
-                <i class="fa fa-eye icon"></i>
+              <div id="togglePassword" onclick="myFunction()">
+                <i class="fa fa-eye icon" id="togglePassword"></i>
               </div>
             </div>
           </div>
-
+          <div class="form-group flex-col">
+            <label for="">Enter Password Again</label>
+            <div id="form" class="form-input flex password">
+              <i class="fa fa-lock icon"></i>
+              <input
+                class="input-field"
+                name="confirmPassword"
+                type="password"
+                placeholder="Password"
+                required
+              />
+              <div id="togglePassword" onclick="myFunction()">
+                <i class="fa fa-eye icon" id="togglePassword"></i>
+              </div>
+            </div>
+          </div>
           <div class="remember flex">
             <input class="" type="checkbox" /><span>Remember Me</span>
           </div>
+          <p id="label">
+            By clicking create account, you have agreed to our Terms &
+            Condition.
+          </p>
           <p id="message" class="message"></p>
-          <button type="submit" class="login-btn">Login</button>
+          <button type="submit" class="login-btn">Create Account</button>
           <div class="form-redirect flex-col">
             <p id="label">
-              Forgot Password? <span class="dummy">Click here</span>
-            </p>
-            <p id="label">
-              Don't Have an account? <a href="/register">Create an account</a>
+              Already have an account? <a href="/login">Login</a>
             </p>
           </div>
         </form>
       </div>
+
       <div class="r-side flex">
-        <img src="/images/Rectangle1862.png" id="sed" alt="sedan" />
+        <img src="/images/createaccount.png" id="sed" alt="sedan" />
       </div>
     </div>
-
     <footer class="text-center">
       <div class="contact-us__container">
         <div class="dark-bg-mobile"></div>
@@ -269,7 +299,6 @@
         </div>
       </div>
     </footer>
-    <script src="/scripts/protect.js"></script>
-    <script src="/scripts/login.js"></script>
+    <script src="/scripts/register.js"></script>
   </body>
 </html>

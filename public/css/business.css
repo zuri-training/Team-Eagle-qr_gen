@@ -1,7 +1,7 @@
 .header {
 	gap: 1rem;
 	align-items: center;
-	width: 85%;
+	/* width: 85%; */
 	text-align: center;
 	margin: 0 auto;
 	margin-top: 3rem;
@@ -16,8 +16,46 @@
 	margin-bottom: 3rem;
 }
 
+.wrapper {
+	flex-direction: column-reverse !important;
+	justify-content: space-between !important;
+}
+
+#qrImg {
+	width: 100%;
+	aspect-ratio: 1;
+}
+
+.overlay {
+	width: 80%;
+	margin: 0 auto;
+	border-radius: 5px;
+}
+
+.box {
+	border: 1px solid black;
+	width: 100%;
+	height: 250px;
+	color: black;
+	font-weight: 600;
+	margin-bottom: 1.5rem;
+}
+
+.buttons {
+	gap: 1rem;
+}
+
+.buttons,
+#qrImg {
+	display: none;
+}
+
+select {
+	padding: 0.4rem;
+}
+
 form {
-	width: 90%;
+	/* width: 90%; */
 	margin: 0 auto;
 	gap: 1rem;
 }
@@ -46,7 +84,7 @@ input {
 	border-radius: 10px;
 	color: #1768ef;
 	padding: 0.7rem 1rem;
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -55,7 +93,7 @@ input {
 	color: white;
 	border-radius: 10px;
 	border: 0;
-	width: 80%;
+	width: 100%;
 	justify-content: center;
 	gap: 0.5rem;
 	padding: 0.7rem 1rem;
@@ -66,17 +104,36 @@ input {
 }
 
 @media (min-width: 768px) {
-	.header {
+	.wrapper {
+		flex-direction: row-reverse !important;
+		width: 70%;
+		gap: 2rem;
+	}
+
+	.overlay {
+		translate: 0 10%;
+		width: 40%;
+	}
+
+	.container {
 		width: 55%;
 	}
+
+	.buttons {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	/* .header {
+		width: 55%;
+	} */
 
 	.subheading {
 		margin-bottom: 3rem;
 	}
 
-	form {
+	/*form {
 		width: 55%;
-	}
+	} */
 
 	.form-submit {
 		flex-direction: row;
@@ -89,15 +146,21 @@ input {
 	.generate-qr {
 		width: auto;
 	}
-
 }
 
 @media (min-width: 1024px) {
-	.header {
-		width: 40%;
+	.wrapper {
+		width: 60%;
+	}
+	.overlay {
+		width: 30%;
 	}
 
-	form {
+	/* .header {
 		width: 40%;
-	}
+	} */
+
+	/* form {
+		width: 40%;
+	} */
 }

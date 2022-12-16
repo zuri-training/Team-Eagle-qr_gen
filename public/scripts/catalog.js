@@ -81,3 +81,13 @@ const createCatalog = async (event) => {
     createSection(data.data);
   };
 };
+
+let card = document.querySelector(".box"),
+	image = document.querySelector("#qrImg"),
+	buttons = document.querySelector(".buttons");
+
+function showDiv() {
+	card.style.display = "none";
+	image.style.display = "block";
+	buttons.style.display = "flex";
+}

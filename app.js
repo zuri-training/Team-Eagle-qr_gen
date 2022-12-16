@@ -1,138 +1,53 @@
-const express = require("express"),
-	mongoose = require("mongoose"),
-	passport = require("passport"),
-	bodyParser = require("body-parser"),
-	LocalStrategy = require("passport-local"),
-	passportLocalMongoose = require("passport-local-mongoose"),
-	User = require("./models/user");
-const connectDB = require("./db/dbconnect");
-require("dotenv").config();
-var app = express();
-app.use(express.static("public"));
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const path = require("path");
+const fileUpload = require("express-fileupload");
+const userRouter = require("./routes/userRoutes");
+const productRouter = require("./routes/productRoutes");
+const businessCardRouter = require("./routes/businessCardRoutes");
+const qrRouter = require("./routes/qrRoutes");
+const cookies = require("cookie-parser");
 
-// var path = require("path");
-// const qr = require("qrcode");
-//app.use(express.static(path.join(__dirname, '/public')));
-// app.set("views", "./views");
-// app.set("view engine", "ejs");
-app.use(bodyParser.urlencoded({ extended: true }));
+const app = express();
+app.use(cors());
+app.use(cookies());
 
+// Body parser, reading data from body into req.body
 app.use(
-	require("express-session")({
-		secret: "Rusty is a dog",
-		resave: false,
-		saveUninitialized: false,
+	fileUpload({
+		limits: { fileSize: 50 * 1024 * 1024 },
 	})
 );
 
-app.use(passport.initialize());
-app.use(passport.session());
-
-passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
-
-// const QRCode = require("qrcode");
-
-// var opts = {
-// 	errorCorrectionLevel: "H",
-// 	type: "image/jpeg",
-// 	quality: 0.9,
-// 	margin: 1,
-// 	width: 250,
-// 	color: {
-// 		dark: "#000",
-// 		light: "#FFF",
-// 	},
-// };
-
-// const generateQR = async (text) => {
-// 	QRCode.toDataURL(text, opts, (err, src) => {
-// 		let url = src;
-// 		return url;
-// 		if (err) {
-// 			console.log(err);
-// 		}
-// 	});
-// };
-
-//=====================
-// ROUTES
-//=====================
-
-// Showing home page
-app.get("/", function (req, res) {
-	res.sendFile("./views/index.html", { root: __dirname });
-});
-
-// Showing register form
-app.get("/register", function (req, res) {
-	res.sendFile("./views/createaccount.html", { root: __dirname });
-});
-
-app.get("/categories", function (req, res) {
-	res.sendFile("./views/categories.html", { root: __dirname });
-});
-app.get("/user/generate-card", function (req, res) {
-	res.sendFile("./views/businesscard.html", { root: __dirname });
-});
-app.get("/user/generate-catalog", function (req, res) {
-	res.sendFile("./views/catalog.html", { root: __dirname });
-});
-app.get("/user/generate-link", function (req, res) {
-	res.sendFile("./views/webinfo.html", { root: __dirname });
-});
-
-// Handling user signup
-app.post("/register", function (req, res) {
-	var username = req.body.username;
-	var password = req.body.password;
-	User.register(new User({ username: username, password: password }), password, function (err, user) {
-		if (err) {
-			console.log(err);
-			return res.sendFile("./views/createaccount.html", { root: __dirname });
-		}
-
-		passport.authenticate("local")(req, res, function () {
-			res.redirect("/categories");
-		});
-	});
-});
-
-//Showing login form
-app.get("/login", function (req, res) {
-	res.sendFile("./views/login.html", { root: __dirname });
-});
-
-//Handling user login
-app.post(
-	"/login",
-	passport.authenticate("local", {
-		successRedirect: "/categories",
-		failureRedirect: "/login",
-	}),
-	function (req, res) {}
+app.use(
+	express.json({
+		limit: "100mb",
+	})
 );
 
-//Handling user logout
-app.get("/logout", function (req, res) {
-	req.logout;
-	res.redirect("/");
+app.use(bodyParser.urlencoded({ extended: false, limit: "10kb" }));
+
+// app.use(express.urlencoded({ extended: true,  }));
+
+// Serving static files
+app.use(express.static(`${__dirname}/public`));
+
+// 3) ROUTES
+app.use("/api/users", userRouter);
+app.use("/api/product", productRouter);
+app.use("/api/businessCard", businessCardRouter);
+app.use("/api/qr", qrRouter);
+
+// 4) PAGES ROUTES
+app.use("/register", (_, res) => res.sendFile(path.join(`${__dirname}/views/register.html`)));
+app.use("/login", (_, res) => res.sendFile(path.join(`${__dirname}/views/login.html`)));
+app.use("/categories", (_, res) => res.sendFile(path.join(`${__dirname}/views/categories.html`)));
+app.use("/business-card", (_, res) => res.sendFile(path.join(`${__dirname}/views/business-card.html`)));
+app.use("/catalog", (_, res) => res.sendFile(path.join(`${__dirname}/views/catalog.html`)));
+app.use("/webinfo", (_, res) => res.sendFile(path.join(`${__dirname}/views/webinfo.html`)));
+app.all("/*", (req, res, next) => {
+	res.sendFile(path.join(`${__dirname}/views/index.html`));
 });
 
-function isLoggedIn(req, res, next) {
-	if (req.isAuthenticated()) return next();
-	res.redirect("/login");
-}
-
-const start = async () => {
-	try {
-		await connectDB(process.env.DATABASE);
-		console.log("DB connected successfully");
-		app.listen(process.env.PORT, console.log(`Server is listening on port ${process.env.PORT}...`));
-	} catch (error) {
-		console.log(error);
-	}
-};
-
-start();
+module.exports = app;
